@@ -1,5 +1,21 @@
 # Changelog
 
+## Phase 3 — Queryable History + Documentation (2026-04-14)
+- Built `scripts/signal_search.py` — 6 query patterns:
+  - `ticker`: historical signals for a name with optional forward-days lookups
+  - `events`: all signals of a type in a date range
+  - `hit-rate`: % of signals hitting a price threshold after N trading days
+  - `persistence`: names holding a mode for N+ consecutive sessions
+  - `trajectory`: time series of (date, close, mode, MoM, R) for a ticker
+  - `switch`: Switch candidates (daily DG + weekly transitioning)
+  - All queries support `--format markdown|csv|json`
+- Created `reference/strategy_reference.md` — canonical RL system deep reference
+- Created `reference/briefing_format.md` — non-negotiable morning briefing format
+- Created `reference/signal_definitions.md` — all signal types with thresholds
+- Created `reference/column_mapping.md` — HTML parsing schema for maintainers
+- Rewrote `README.md` as operational entry point with full usage docs
+- 21 signal_search tests (90 total across all suites, all passing)
+
 ## Phase 2 — Diff + Portfolio Tracking (2026-04-14)
 - Built `scripts/diff.py` — overnight session comparison engine
   - Computes: new Buys, new Sell/pP exits, bear→bull & bull→bear transitions, MoM accelerators
