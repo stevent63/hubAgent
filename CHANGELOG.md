@@ -1,5 +1,12 @@
 # Changelog
 
+## Phase 4a — Skills + Reference Migration (2026-04-14)
+- Migrated 6 skill archives into `skills/` as unpacked directories:
+  - rl-eod-reconciliation, rl-hit-rate-tracker, rl-weekend-analyst,
+    rl-buy-signals-viz, switch-viz-analysis, stock-universe-visualization
+- Copied 12 RL strategy PDFs into `reference/pdfs/`
+- Updated `context/open_items.md` — skills migration and reference PDFs marked DONE
+
 ## Phase 3b — User Profile Separation + Massive API Naming (2026-04-14)
 - Renamed `context/CONTEXT.md` → `MARKET_AGENT_CONTEXT.md` at repo root
 - Extracted user-specific content into `user/chris.fiume@gmail.com.md`

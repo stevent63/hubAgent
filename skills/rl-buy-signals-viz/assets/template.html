@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RL Buy Signals — Feb 5, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --border: #1e293b;
+    --text: #e2e8f0;
+    --text-dim: #64748b;
+    --text-muted: #475569;
+    --accent: #3b82f6;
+    --green-dark: #059669;
+    --green-light: #6ee7b7;
+    --red-dark: #dc2626;
+    --red-light: #fca5a5;
+    --gold: #f59e0b;
+    --purple: #8b5cf6;
+    --cyan: #06b6d4;
+    --spbuy-pp: #f59e0b;
+    --spbuy-p: #fb923c;
+    --spbuy: #f97316;
+    --dbuy: #06b6d4;
+    --buy: #3b82f6;
+    --wbuy: #8b5cf6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .noise {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0;
+  }
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-left h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-left .subtitle {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .header-right {
+    display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;
+  }
+  .legend-chip {
+    display: flex; align-items: center; gap: 5px;
+    padding: 4px 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .legend-chip:hover { border-color: var(--text-dim); }
+  .legend-chip.active { border-color: var(--text); color: var(--text); }
+  .legend-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+
+  /* Stats Row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+  .stat-card.spbuypp::after { background: var(--spbuy-pp); }
+  .stat-card.spbuyp::after { background: var(--spbuy-p); }
+  .stat-card.spbuy::after { background: var(--spbuy); }
+  .stat-card.dbuy::after { background: var(--dbuy); }
+  .stat-card.buy::after { background: var(--buy); }
+  .stat-card.wbuy::after { background: var(--wbuy); }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+  .stat-detail {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* Filters */
+  .filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-group {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .filter-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 4px;
+  }
+  .filter-btn {
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--text-dim); color: var(--text); }
+  .filter-btn.active { background: var(--surface2); border-color: var(--accent); color: var(--text); }
+  .divider { width: 1px; height: 24px; background: var(--border); margin: 0 8px; }
+
+  /* Main Layout */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* Chart Panels */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .panel-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .panel-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--surface2);
+    color: var(--text-dim);
+  }
+  .panel-body { padding: 16px 18px; }
+
+  /* Scatter Plot */
+  .scatter-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+  }
+  .scatter-canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Bar Chart */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    width: 80px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .bar-track {
+    flex: 1;
+    height: 28px;
+    background: var(--bg);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+  }
+  .bar-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+
+  /* Ticker Table */
+  .ticker-table-container {
+    max-height: 480px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .ticker-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .ticker-table thead { position: sticky; top: 0; z-index: 2; }
+  .ticker-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 10px;
+    text-align: left;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .ticker-table th:hover { color: var(--text); }
+  .ticker-table th.sorted { color: var(--accent); }
+  .ticker-table td {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 7px 10px;
+    border-bottom: 1px solid rgba(30,41,59,0.5);
+    white-space: nowrap;
+  }
+  .ticker-table tr:hover td { background: rgba(59,130,246,0.05); }
+  .signal-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .signal-spbuypp { background: rgba(245,158,11,0.2); color: #fbbf24; }
+  .signal-spbuyp { background: rgba(251,146,60,0.2); color: #fb923c; }
+  .signal-spbuy { background: rgba(249,115,22,0.2); color: #f97316; }
+  .signal-dbuy { background: rgba(6,182,212,0.2); color: #22d3ee; }
+  .signal-buy { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .signal-wbuy { background: rgba(139,92,246,0.2); color: #a78bfa; }
+  .mode-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .mode-dr { background: rgba(220,38,38,0.2); color: #f87171; }
+  .mode-lr { background: rgba(252,165,165,0.2); color: #fca5a5; }
+  .mode-bf { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .mode-bl { background: rgba(139,92,246,0.2); color: #a78bfa; }
+  .positive { color: #34d399; }
+  .negative { color: #f87171; }
+  .neutral { color: var(--text-dim); }
+
+  /* Full width panel */
+  .full-width { grid-column: 1 / -1; }
+
+  /* Tooltip */
+  .tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: none;
+    max-width: 280px;
+    line-height: 1.5;
+  }
+  .tooltip-name { font-weight: 700; color: #f1f5f9; font-size: 12px; margin-bottom: 4px; }
+  .tooltip-row { display: flex; justify-content: space-between; gap: 16px; }
+  .tooltip-label { color: #64748b; }
+  .tooltip-value { color: #e2e8f0; font-weight: 500; }
+
+  /* Search */
+  .search-box {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    outline: none;
+    width: 180px;
+    transition: border-color 0.2s;
+  }
+  .search-box:focus { border-color: var(--accent); }
+  .search-box::placeholder { color: var(--text-muted); }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+
+  /* Animations */
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .panel { animation: fadeIn 0.4s ease-out both; }
+  .panel:nth-child(2) { animation-delay: 0.1s; }
+  .panel:nth-child(3) { animation-delay: 0.2s; }
+  .panel:nth-child(4) { animation-delay: 0.3s; }
+
+  /* Switch candidates highlight */
+  .switch-highlight {
+    background: linear-gradient(135deg, rgba(245,158,11,0.06), transparent);
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="tooltip" id="tooltip"></div>
+
+<div class="container">
+  <div class="header">
+    <div class="header-left">
+      <h1>⚡ BUY SIGNALS</h1>
+      <div class="subtitle">RL Dashboard — Feb 5, 2026 — <span id="totalCount">258</span> active signals</div>
+    </div>
+    <div class="header-right" id="legend"></div>
+  </div>
+
+  <div class="stats-row" id="statsRow"></div>
+
+  <div class="filters" id="filters">
+    <span class="filter-label">Asset</span>
+    <div class="filter-group" id="assetFilters"></div>
+    <div class="divider"></div>
+    <span class="filter-label">Signal</span>
+    <div class="filter-group" id="signalFilters"></div>
+    <div class="divider"></div>
+    <input type="text" class="search-box" id="searchBox" placeholder="Search ticker...">
+  </div>
+
+  <div class="main-grid">
+    <!-- Scatter: P/L vs Days in signal -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">P/L % vs Days in Signal</span>
+        <span class="panel-badge">SCATTER</span>
+      </div>
+      <div class="panel-body">
+        <div class="scatter-container">
+          <canvas id="scatterPLDays" class="scatter-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signal Distribution by Mode -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Signal Strength × Mode Bucket</span>
+        <span class="panel-badge">DISTRIBUTION</span>
+      </div>
+      <div class="panel-body">
+        <div id="modeDistribution"></div>
+      </div>
+    </div>
+
+    <!-- Scatter: Weekly Bear Duration (Tr) vs P/L — Switch focus -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Weekly Bear Duration (Tr) vs P/L %</span>
+        <span class="panel-badge">SWITCH SCAN</span>
+      </div>
+      <div class="panel-body">
+        <div class="scatter-container">
+          <canvas id="scatterTrPL" class="scatter-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signal Strength Breakdown -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Signal Strength Breakdown</span>
+        <span class="panel-badge">BAR</span>
+      </div>
+      <div class="panel-body">
+        <div class="bar-chart" id="signalBars"></div>
+      </div>
+    </div>
+
+    <!-- Full-width ticker table -->
+    <div class="panel full-width">
+      <div class="panel-header">
+        <span class="panel-title">All Buy Signals — Sortable</span>
+        <span class="panel-badge" id="tableCount">258 SIGNALS</span>
+      </div>
+      <div class="ticker-table-container">
+        <table class="ticker-table" id="tickerTable">
+          <thead>
+            <tr>
+              <th data-sort="name">Name ↕</th>
+              <th data-sort="signal">Signal ↕</th>
+              <th data-sort="modeBucket">Mode ↕</th>
+              <th data-sort="plNum">P/L % ↕</th>
+              <th data-sort="days">Days ↕</th>
+              <th data-sort="tr">Tr (Wk) ↕</th>
+              <th data-sort="mom">MoM ↕</th>
+              <th data-sort="r">R ↕</th>
+              <th data-sort="assetClass">Class ↕</th>
+            </tr>
+          </thead>
+          <tbody id="tickerBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = %%DATA_PLACEHOLDER%%;
+
+// Signal hierarchy
+const SIGNAL_ORDER = { 'spBuy++': 6, 'spBuy+': 5, 'spBuy': 4, 'dBuy': 3, 'Buy': 2, 'wBuy': 1 };
+const SIGNAL_COLORS = {
+  'spBuy++': '#f59e0b', 'spBuy+': '#fb923c', 'spBuy': '#f97316',
+  'dBuy': '#22d3ee', 'Buy': '#60a5fa', 'wBuy': '#a78bfa'
+};
+const SIGNAL_CSS = {
+  'spBuy++': 'signal-spbuypp', 'spBuy+': 'signal-spbuyp', 'spBuy': 'signal-spbuy',
+  'dBuy': 'signal-dbuy', 'Buy': 'signal-buy', 'wBuy': 'signal-wbuy'
+};
+const MODE_CSS = {
+  'Dark Red': 'mode-dr', 'Light Red': 'mode-lr',
+  'Bear-Bull Flip': 'mode-bf', 'Bear-Bull (LR-LG)': 'mode-bl'
+};
+const MODE_COLORS = {
+  'Dark Red': '#ef4444', 'Light Red': '#fca5a5',
+  'Bear-Bull Flip': '#3b82f6', 'Bear-Bull (LR-LG)': '#8b5cf6'
+};
+
+// State
+let activeAssets = new Set(['Stock', 'ETF', 'Crypto', 'FX', 'Macro']);
+let activeSignals = new Set(Object.keys(SIGNAL_ORDER));
+let searchTerm = '';
+let sortCol = 'signal';
+let sortDir = -1; // descending by default for signal strength
+
+function filteredData() {
+  return DATA.filter(d =>
+    activeAssets.has(d.assetClass) &&
+    activeSignals.has(d.signal) &&
+    (searchTerm === '' || d.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+}
+
+// Build Stats
+function buildStats() {
+  const counts = {};
+  Object.keys(SIGNAL_ORDER).forEach(s => counts[s] = 0);
+  DATA.forEach(d => counts[d.signal] = (counts[d.signal] || 0) + 1);
+  const row = document.getElementById('statsRow');
+  const cardClass = { 'spBuy++': 'spbuypp', 'spBuy+': 'spbuyp', 'spBuy': 'spbuy', 'dBuy': 'dbuy', 'Buy': 'buy', 'wBuy': 'wbuy' };
+  const descriptions = {
+    'spBuy++': 'Strongest reversal',
+    'spBuy+': 'Strong reversal',
+    'spBuy': 'Special buy',
+    'dBuy': 'Divergence buy',
+    'Buy': 'Standard buy',
+    'wBuy': 'Weak/early buy'
+  };
+  row.innerHTML = Object.entries(SIGNAL_ORDER)
+    .sort((a, b) => b[1] - a[1])
+    .map(([sig]) => `
+      <div class="stat-card ${cardClass[sig]}">
+        <div class="stat-label">${sig}</div>
+        <div class="stat-value" style="color:${SIGNAL_COLORS[sig]}">${counts[sig]}</div>
+        <div class="stat-detail">${descriptions[sig]}</div>
+      </div>
+    `).join('');
+}
+
+// Build Legend
+function buildLegend() {
+  const leg = document.getElementById('legend');
+  leg.innerHTML = Object.entries(SIGNAL_COLORS).map(([sig, color]) =>
+    `<div class="legend-chip active" data-signal="${sig}">
+      <span class="legend-dot" style="background:${color}"></span>${sig}
+    </div>`
+  ).join('');
+}
+
+// Build Filters
+function buildFilters() {
+  const assets = ['Stock', 'ETF', 'Crypto', 'FX', 'Macro'];
+  document.getElementById('assetFilters').innerHTML = assets.map(a =>
+    `<button class="filter-btn active" data-asset="${a}">${a}</button>`
+  ).join('');
+
+  const signals = Object.keys(SIGNAL_ORDER).sort((a, b) => SIGNAL_ORDER[b] - SIGNAL_ORDER[a]);
+  document.getElementById('signalFilters').innerHTML = signals.map(s =>
+    `<button class="filter-btn active" data-signal="${s}" style="border-color:${SIGNAL_COLORS[s]}40">${s}</button>`
+  ).join('');
+
+  document.querySelectorAll('[data-asset]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const asset = btn.dataset.asset;
+      if (activeAssets.has(asset)) { activeAssets.delete(asset); btn.classList.remove('active'); }
+      else { activeAssets.add(asset); btn.classList.add('active'); }
+      update();
+    });
+  });
+
+  document.querySelectorAll('.filter-group [data-signal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sig = btn.dataset.signal;
+      if (activeSignals.has(sig)) { activeSignals.delete(sig); btn.classList.remove('active'); }
+      else { activeSignals.add(sig); btn.classList.add('active'); }
+      update();
+    });
+  });
+
+  document.getElementById('searchBox').addEventListener('input', e => {
+    searchTerm = e.target.value;
+    update();
+  });
+}
+
+// Draw Scatter
+function drawScatter(canvasId, data, xKey, yKey, xLabel, yLabel, xFormatter, yFormatter) {
+  const canvas = document.getElementById(canvasId);
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = rect.height + 'px';
+  ctx.scale(dpr, dpr);
+
+  const W = rect.width, H = rect.height;
+  const pad = { top: 20, right: 20, bottom: 40, left: 55 };
+  const plotW = W - pad.left - pad.right;
+  const plotH = H - pad.top - pad.bottom;
+
+  ctx.clearRect(0, 0, W, H);
+
+  if (data.length === 0) {
+    ctx.fillStyle = '#475569';
+    ctx.font = '14px DM Sans';
+    ctx.textAlign = 'center';
+    ctx.fillText('No data matching filters', W / 2, H / 2);
+    return;
+  }
+
+  const xVals = data.map(d => d[xKey]);
+  const yVals = data.map(d => d[yKey]);
+  let xMin = Math.min(...xVals), xMax = Math.max(...xVals);
+  let yMin = Math.min(...yVals), yMax = Math.max(...yVals);
+  // Add padding
+  const xPad = (xMax - xMin) * 0.08 || 1;
+  const yPad = (yMax - yMin) * 0.08 || 1;
+  xMin -= xPad; xMax += xPad;
+  yMin -= yPad; yMax += yPad;
+
+  const toX = v => pad.left + ((v - xMin) / (xMax - xMin)) * plotW;
+  const toY = v => pad.top + plotH - ((v - yMin) / (yMax - yMin)) * plotH;
+
+  // Grid
+  ctx.strokeStyle = '#1e293b';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 5; i++) {
+    const y = pad.top + (plotH / 5) * i;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(W - pad.right, y); ctx.stroke();
+    const val = yMax - (yMax - yMin) * (i / 5);
+    ctx.fillStyle = '#475569';
+    ctx.font = '10px JetBrains Mono';
+    ctx.textAlign = 'right';
+    ctx.fillText(yFormatter ? yFormatter(val) : val.toFixed(1), pad.left - 6, y + 3);
+  }
+  for (let i = 0; i <= 5; i++) {
+    const x = pad.left + (plotW / 5) * i;
+    ctx.beginPath(); ctx.moveTo(x, pad.top); ctx.lineTo(x, H - pad.bottom); ctx.stroke();
+    const val = xMin + (xMax - xMin) * (i / 5);
+    ctx.fillStyle = '#475569';
+    ctx.font = '10px JetBrains Mono';
+    ctx.textAlign = 'center';
+    ctx.fillText(xFormatter ? xFormatter(val) : val.toFixed(0), x, H - pad.bottom + 14);
+  }
+
+  // Zero line for P/L
+  if (yKey === 'plNum' && yMin < 0 && yMax > 0) {
+    ctx.strokeStyle = 'rgba(100,116,139,0.4)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    const zeroY = toY(0);
+    ctx.beginPath(); ctx.moveTo(pad.left, zeroY); ctx.lineTo(W - pad.right, zeroY); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Axis labels
+  ctx.fillStyle = '#64748b';
+  ctx.font = '11px JetBrains Mono';
+  ctx.textAlign = 'center';
+  ctx.fillText(xLabel, pad.left + plotW / 2, H - 4);
+  ctx.save();
+  ctx.translate(12, pad.top + plotH / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText(yLabel, 0, 0);
+  ctx.restore();
+
+  // Points
+  data.forEach(d => {
+    const x = toX(d[xKey]);
+    const y = toY(d[yKey]);
+    const color = SIGNAL_COLORS[d.signal] || '#60a5fa';
+    const radius = SIGNAL_ORDER[d.signal] >= 4 ? 5 : 3.5;
+
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fillStyle = color + '90';
+    ctx.fill();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Label strong signals
+    if (SIGNAL_ORDER[d.signal] >= 5 && d.assetClass === 'Stock') {
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '9px JetBrains Mono';
+      ctx.textAlign = 'left';
+      const shortName = d.name.length > 12 ? d.name.substring(0, 12) + '…' : d.name;
+      ctx.fillText(shortName, x + 7, y + 3);
+    }
+  });
+
+  // Store scatter data for tooltips
+  canvas._scatterData = data;
+  canvas._toX = toX;
+  canvas._toY = toY;
+  canvas._xKey = xKey;
+  canvas._yKey = yKey;
+  canvas._pad = pad;
+}
+
+// Tooltip handling
+function setupTooltips() {
+  const tooltip = document.getElementById('tooltip');
+
+  ['scatterPLDays', 'scatterTrPL'].forEach(id => {
+    const canvas = document.getElementById(id);
+    canvas.addEventListener('mousemove', e => {
+      if (!canvas._scatterData) return;
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+      const data = canvas._scatterData;
+      const toX = canvas._toX;
+      const toY = canvas._toY;
+      const xKey = canvas._xKey;
+      const yKey = canvas._yKey;
+
+      let closest = null, minDist = Infinity;
+      data.forEach(d => {
+        const dx = toX(d[xKey]) - mx;
+        const dy = toY(d[yKey]) - my;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < minDist && dist < 20) { minDist = dist; closest = d; }
+      });
+
+      if (closest) {
+        tooltip.style.display = 'block';
+        tooltip.style.left = (e.clientX + 14) + 'px';
+        tooltip.style.top = (e.clientY - 10) + 'px';
+        const plColor = closest.plNum >= 0 ? '#34d399' : '#f87171';
+        tooltip.innerHTML = `
+          <div class="tooltip-name">${closest.name}</div>
+          <div class="tooltip-row"><span class="tooltip-label">Signal</span><span class="tooltip-value" style="color:${SIGNAL_COLORS[closest.signal]}">${closest.signal}</span></div>
+          <div class="tooltip-row"><span class="tooltip-label">P/L</span><span class="tooltip-value" style="color:${plColor}">${closest.pl}</span></div>
+          <div class="tooltip-row"><span class="tooltip-label">Days</span><span class="tooltip-value">${closest.days}</span></div>
+          <div class="tooltip-row"><span class="tooltip-label">Tr (Wk)</span><span class="tooltip-value">${closest.tr}</span></div>
+          <div class="tooltip-row"><span class="tooltip-label">MoM</span><span class="tooltip-value">${closest.mom}</span></div>
+          <div class="tooltip-row"><span class="tooltip-label">R</span><span class="tooltip-value">${closest.rRaw}</span></div>
+          <div class="tooltip-row"><span class="tooltip-label">Mode</span><span class="tooltip-value">${closest.modeBucket}</span></div>
+        `;
+      } else {
+        tooltip.style.display = 'none';
+      }
+    });
+    canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+  });
+}
+
+// Mode Distribution chart
+function buildModeDistribution(data) {
+  const container = document.getElementById('modeDistribution');
+  const modes = ['Bear-Bull Flip', 'Bear-Bull (LR-LG)', 'Light Red', 'Dark Red'];
+  const signals = Object.keys(SIGNAL_ORDER).sort((a, b) => SIGNAL_ORDER[b] - SIGNAL_ORDER[a]);
+
+  const matrix = {};
+  modes.forEach(m => {
+    matrix[m] = {};
+    signals.forEach(s => matrix[m][s] = 0);
+  });
+  data.forEach(d => {
+    if (matrix[d.modeBucket] && matrix[d.modeBucket][d.signal] !== undefined) {
+      matrix[d.modeBucket][d.signal]++;
+    }
+  });
+
+  const maxCount = Math.max(...modes.map(m => Object.values(matrix[m]).reduce((a, b) => a + b, 0)));
+
+  container.innerHTML = modes.map(mode => {
+    const total = Object.values(matrix[mode]).reduce((a, b) => a + b, 0);
+    const segments = signals.map(sig => {
+      const count = matrix[mode][sig];
+      if (count === 0) return '';
+      const pct = (count / maxCount) * 100;
+      return `<div style="width:${pct}%;background:${SIGNAL_COLORS[sig]};height:100%;display:inline-block;position:relative" title="${sig}: ${count}">
+        ${count >= 3 ? `<span style="position:absolute;left:4px;top:50%;transform:translateY(-50%);font:600 10px JetBrains Mono;color:white;text-shadow:0 1px 2px rgba(0,0,0,0.4)">${count}</span>` : ''}
+      </div>`;
+    }).join('');
+
+    return `
+      <div class="bar-row" style="margin-bottom:10px">
+        <div class="bar-label" style="width:120px">
+          <span style="color:${MODE_COLORS[mode]}">${mode}</span>
+          <span style="color:#475569;font-size:10px;margin-left:4px">(${total})</span>
+        </div>
+        <div class="bar-track" style="display:flex;overflow:hidden">${segments}</div>
+      </div>`;
+  }).join('');
+
+  // Legend below
+  container.innerHTML += `<div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+    ${signals.map(s => `<div style="display:flex;align-items:center;gap:4px">
+      <span style="width:10px;height:10px;border-radius:2px;background:${SIGNAL_COLORS[s]};display:inline-block"></span>
+      <span style="font:11px JetBrains Mono;color:#64748b">${s}</span>
+    </div>`).join('')}
+  </div>`;
+}
+
+// Signal Bars
+function buildSignalBars(data) {
+  const container = document.getElementById('signalBars');
+  const counts = {};
+  Object.keys(SIGNAL_ORDER).forEach(s => counts[s] = 0);
+  data.forEach(d => counts[d.signal]++);
+  const maxCount = Math.max(...Object.values(counts));
+
+  const signals = Object.keys(SIGNAL_ORDER).sort((a, b) => SIGNAL_ORDER[b] - SIGNAL_ORDER[a]);
+  container.innerHTML = signals.map(sig => {
+    const pct = maxCount > 0 ? (counts[sig] / maxCount) * 100 : 0;
+    return `
+      <div class="bar-row">
+        <div class="bar-label" style="color:${SIGNAL_COLORS[sig]}">${sig}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${pct}%;background:linear-gradient(90deg,${SIGNAL_COLORS[sig]}dd,${SIGNAL_COLORS[sig]}66)">
+            <span class="bar-count">${counts[sig]}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Asset class breakdown below
+  const assetCounts = {};
+  data.forEach(d => assetCounts[d.assetClass] = (assetCounts[d.assetClass] || 0) + 1);
+  const assetMax = Math.max(...Object.values(assetCounts));
+  const assetColors = { 'Stock': '#3b82f6', 'ETF': '#8b5cf6', 'Crypto': '#f59e0b', 'FX': '#06b6d4', 'Macro': '#10b981' };
+
+  container.innerHTML += `<div style="margin-top:20px;padding-top:14px;border-top:1px solid #1e293b">
+    <div style="font:11px JetBrains Mono;color:#475569;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">By Asset Class</div>
+    ${Object.entries(assetCounts).sort((a,b) => b[1]-a[1]).map(([cls, cnt]) => {
+      const pct = (cnt / assetMax) * 100;
+      return `<div class="bar-row" style="margin-bottom:4px">
+        <div class="bar-label" style="color:${assetColors[cls] || '#64748b'}">${cls}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${pct}%;background:${assetColors[cls] || '#64748b'}66">
+            <span class="bar-count">${cnt}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+// Ticker Table
+function buildTable(data) {
+  const body = document.getElementById('tickerBody');
+  const sorted = [...data].sort((a, b) => {
+    let va = a[sortCol], vb = b[sortCol];
+    if (sortCol === 'signal') { va = SIGNAL_ORDER[va] || 0; vb = SIGNAL_ORDER[vb] || 0; }
+    if (typeof va === 'string') return sortDir * va.localeCompare(vb);
+    return sortDir * (va - vb);
+  });
+
+  body.innerHTML = sorted.map(d => {
+    const plColor = d.plNum >= 0 ? 'positive' : 'negative';
+    const rColor = d.r > 0 ? 'positive' : d.r < 0 ? 'negative' : 'neutral';
+    return `<tr>
+      <td style="font-weight:500;color:#e2e8f0">${d.name}</td>
+      <td><span class="signal-badge ${SIGNAL_CSS[d.signal]}">${d.signal}</span></td>
+      <td><span class="mode-badge ${MODE_CSS[d.modeBucket] || ''}">${d.modeBucket}</span></td>
+      <td class="${plColor}">${d.pl}</td>
+      <td>${d.days}</td>
+      <td>${d.tr}</td>
+      <td>${d.mom}</td>
+      <td class="${rColor}">${d.r.toFixed(2)}</td>
+      <td style="color:#64748b">${d.assetClass}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('tableCount').textContent = `${data.length} SIGNALS`;
+  document.getElementById('totalCount').textContent = data.length;
+}
+
+// Sort handling
+document.getElementById('tickerTable').querySelector('thead').addEventListener('click', e => {
+  const th = e.target.closest('th');
+  if (!th || !th.dataset.sort) return;
+  const col = th.dataset.sort;
+  if (sortCol === col) sortDir *= -1;
+  else { sortCol = col; sortDir = -1; }
+  document.querySelectorAll('.ticker-table th').forEach(t => t.classList.remove('sorted'));
+  th.classList.add('sorted');
+  update();
+});
+
+function update() {
+  const data = filteredData();
+  drawScatter('scatterPLDays', data, 'days', 'plNum', 'Days in Signal', 'P/L %',
+    v => v.toFixed(0), v => v.toFixed(1) + '%');
+  drawScatter('scatterTrPL', data, 'tr', 'plNum', 'Weekly Bear Duration (Tr)', 'P/L %',
+    v => v.toFixed(0) + 'w', v => v.toFixed(1) + '%');
+  buildModeDistribution(data);
+  buildSignalBars(data);
+  buildTable(data);
+}
+
+// Init
+buildStats();
+buildLegend();
+buildFilters();
+update();
+setupTooltips();
+
+// Resize
+window.addEventListener('resize', () => { update(); });
+</script>
+</body>
+</html>

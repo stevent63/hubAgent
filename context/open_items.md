@@ -8,7 +8,7 @@ Tracked from CONTEXT.md and build spec. Updated as phases complete.
    **Status:** [NOT STARTED]
 
 2. **Persistent data layer migration** — hubAgent repo as the durable data layer for RL signal history, portfolio tracking, and analysis outputs.
-   **Status:** [IN PROGRESS — Phase 1 complete]
+   **Status:** [IN PROGRESS — Phases 1-3b complete]
 
 3. **Switch universe analysis tracking** — 58-name Switch candidate list needs signal data once extractor is fixed and master_history is populated. Top candidates: V, MA, AXP, UNH, TMO, BLK, BKNG, ORLY, SWKS.
    **Status:** [NOT STARTED]
@@ -17,10 +17,10 @@ Tracked from CONTEXT.md and build spec. Updated as phases complete.
    **Status:** [DEFERRED — Phase 5]
 
 5. **Skills migration** — copy skill files into hubAgent/skills/ for versioned persistence.
-   **Status:** [DEFERRED — Phase 4]
+   **Status:** [DONE — Phase 4a, 6 skills migrated]
 
-6. **Reference PDFs** — 13 RL strategy PDFs to live in hubAgent/reference/pdfs/.
-   **Status:** [DEFERRED — Phase 4]
+6. **Reference PDFs** — 12 RL strategy PDFs in hubAgent/reference/pdfs/.
+   **Status:** [DONE — Phase 4a, 12 PDFs migrated]
 
 7. **QuickTarget multiplier verification** — confirm whether RL platform QT multipliers match the 0.4/0.6 defaults used in calculations.
    **Status:** [PENDING USER]
