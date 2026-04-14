@@ -234,7 +234,7 @@ INTC (+10.0), POWL (+8.84), FORM (+8.64), GLW (+8.50), STX (+8.47), CENX (+8.37)
 
 3. **Switch universe analysis** — 58-name list analyzed April 14 structurally; needs actual signal data once extractor is fixed and master_history is populated. Top Switch candidates identified: V, MA, AXP, UNH, TMO, BLK, BKNG, ORLY, SWKS.
 
-4. **EOD reconciliation deployment** — script designed, Polygon key available (`AEAnWuVQl33zGCnt1FtIUeaml3obF0dx`), needs CLI environment to run because web chat container can't reach api.polygon.io.
+4. **EOD reconciliation deployment** — script designed, Polygon API key stored in .env locally, gitignored, never committed. Needs CLI environment to run because web chat container can't reach api.polygon.io.
 
 5. **Skills migration** — copy `/mnt/skills/user/` skill files into `hubAgent/skills/` for versioned persistence.
 
