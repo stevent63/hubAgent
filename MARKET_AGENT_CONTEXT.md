@@ -1,23 +1,20 @@
-# CONTEXT.md
+# MARKET_AGENT_CONTEXT.md
 ## hubAgent — Reversal Levels Trading Analysis System
 
 **Last updated:** April 14, 2026
-**Purpose:** Orient any Claude session (web chat, CLI, future instance) to the user, system, and current state. Read this first before doing any work.
+**Purpose:** Orient any Claude session (web chat, CLI, future instance) to the RL system and current state. Read this first before doing any work.
 
 ---
 
-## Who You're Working With
+## User Profile Loading
 
-**Chris** — active trader since 2015, using the Reversal Levels (RL) system daily. Fort Lauderdale, FL. Primary platform: Reversal Levels. Primary broker context: active daily trader, runs multiple strategies simultaneously. Technical enough to run Claude Code CLI, Python pipelines, and Polygon API; not a software engineer by trade.
+User-specific preferences, communication style, and trading philosophy are stored in `user/{email}.md`. To load the active user's profile:
 
-**Communication preferences:**
-- Direct, no-hedging analysis
-- Conviction calls are VALUE-ADD, not risk — Chris explicitly wants you to go on a limb when signals support it
-- Narrative/story context enhances signal reads; it shouldn't OVERRIDE signal reads
-- When signals contradict external headlines, trust signals and say so
-- Do NOT over-index on any single metric (R value is one input, not the whole quality assessment)
-- Path-dependent thinking matters — frame analysis around scenarios (chop/pullback/lockout rally), not single outcomes
-- Feedback loop tight — Chris will push back when reasoning is thin or frameworks are misapplied, and that pushback is valid
+```bash
+python3 scripts/get_user.py
+```
+
+This reads `USER_EMAIL` from `.env` and returns the path to the user's profile file. Read that file alongside this one at session start.
 
 ---
 
@@ -139,11 +136,7 @@ Every morning briefing follows this structure. This is not a stylistic preferenc
 
 ## Portfolio Philosophy
 
-- **Position count target:** ~50-65 active positions during deployment phases
-- **Sizing framework:** Core 5-8%, Conviction 3-4%, Asymmetric/Speculative 1.5-2%
-- **Diversification:** Across themes (semi, mining, biotech, satellite, energy, industrial, etc.), not just names
-- **Exit discipline:** Trust the system. Sell = exit. pP = consider exit (take profits on winners). dSell = warning, tighten stop. Don't front-run exits; don't delay confirmed exits.
-- **Management vs deployment modes:** When market is broadly bullish and portfolio is diversified, the work shifts from "find new entries" to "execute profit-takes on extended winners."
+See active user profile (`user/{email}.md`) for sizing framework, position count targets, and exit discipline details.
 
 ---
 
@@ -184,7 +177,7 @@ These are patterns validated by real execution during the Feb 28 – Apr 14, 202
 - Diff engine — computes overnight changes vs prior session
 - Morning briefing template — proven format, reproducible
 - Multiple skill files in `/mnt/skills/user/` — EOD reconciliation, hit-rate tracker, weekend analyst, switch viz, etc.
-- Polygon API key available (not yet integrated due to web chat network restrictions)
+- Massive API key (formerly Polygon) available in .env (not yet integrated due to web chat network restrictions)
 - Portfolio of 52-55 active positions (changes daily as pP signals fire)
 
 **What's missing / being built:**
@@ -234,7 +227,7 @@ INTC (+10.0), POWL (+8.84), FORM (+8.64), GLW (+8.50), STX (+8.47), CENX (+8.37)
 
 3. **Switch universe analysis** — 58-name list analyzed April 14 structurally; needs actual signal data once extractor is fixed and master_history is populated. Top Switch candidates identified: V, MA, AXP, UNH, TMO, BLK, BKNG, ORLY, SWKS.
 
-4. **EOD reconciliation deployment** — script designed, Polygon API key stored in .env locally, gitignored, never committed. Needs CLI environment to run because web chat container can't reach api.polygon.io.
+4. **EOD reconciliation deployment** — script designed, Massive API key (formerly Polygon) stored in .env locally, gitignored, never committed. Needs CLI environment to run.
 
 5. **Skills migration** — copy `/mnt/skills/user/` skill files into `hubAgent/skills/` for versioned persistence.
 
@@ -250,7 +243,8 @@ Paste at the start of any new conversation:
 
 ```
 Read the following files before we begin:
-- https://raw.githubusercontent.com/stevent63/hubAgent/main/context/CONTEXT.md
+- https://raw.githubusercontent.com/stevent63/hubAgent/main/MARKET_AGENT_CONTEXT.md
+- https://raw.githubusercontent.com/stevent63/hubAgent/main/user/chris.fiume@gmail.com.md
 - https://raw.githubusercontent.com/stevent63/hubAgent/main/reference/briefing_format.md
 - https://raw.githubusercontent.com/stevent63/hubAgent/main/reference/strategy_reference.md
 
@@ -269,10 +263,7 @@ That's the bootstrapping pattern. Any Claude session — fresh or continuation �
 
 ## Core Principles (Repeat When Uncertain)
 
+See active user profile for the full list. Universal principles:
+
 1. **Signals first, narrative second.** Report what the data says; layer context to explain, not override.
-2. **Conviction is value-add.** Going on a limb when signals support it is the job, not the risk.
-3. **Trust the system's exit signals.** No front-running, no delay, no averaging down.
-4. **Path-dependent thinking.** Most analyses should address multiple market scenarios.
-5. **R is an input, not the answer.** Setup structure, timing, theme context, index flows all matter.
-6. **Compound analysis across sessions.** Persistent memory is the goal; ephemeral insight is the failure mode.
-7. **High signal per word.** Chris reads fast, values density, doesn't need padding.
+2. **Compound analysis across sessions.** Persistent memory is the goal; ephemeral insight is the failure mode.

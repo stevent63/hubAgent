@@ -32,7 +32,8 @@ Paste this template at the start of any conversation:
 
 ```
 Read these files before we begin:
-- https://raw.githubusercontent.com/stevent63/hubAgent/main/context/CONTEXT.md
+- https://raw.githubusercontent.com/stevent63/hubAgent/main/MARKET_AGENT_CONTEXT.md
+- https://raw.githubusercontent.com/stevent63/hubAgent/main/user/chris.fiume@gmail.com.md
 - https://raw.githubusercontent.com/stevent63/hubAgent/main/reference/briefing_format.md
 - https://raw.githubusercontent.com/stevent63/hubAgent/main/reference/strategy_reference.md
 
@@ -61,6 +62,7 @@ hubAgent/
 │   ├── signal_search.py            # Query master history for patterns
 │   ├── portfolio_track.py          # Position ledger CRUD
 │   ├── backfill.py                 # One-time historical load
+│   ├── get_user.py                 # Load user profile from .env
 │   ├── morning_run.sh              # Daily orchestrator
 │   └── eod_run.sh                  # EOD reconciliation (future)
 ├── reference/                      # Framework documentation
@@ -68,12 +70,15 @@ hubAgent/
 │   ├── briefing_format.md          # Morning briefing format spec
 │   ├── signal_definitions.md       # Signal types + thresholds
 │   └── column_mapping.md           # HTML parsing schema
+├── MARKET_AGENT_CONTEXT.md             # System orientation (read first)
+├── user/                               # Per-user profiles
+│   └── chris.fiume@gmail.com.md        # User preferences + trading style
 ├── context/
-│   ├── CONTEXT.md                  # Session orientation
 │   ├── portfolio_state.md          # Current holdings narrative
 │   └── open_items.md               # In-progress items
 ├── skills/                         # Skill files for Claude sessions
 ├── tests/                          # Test suite
+├── .env.example                        # Environment variable template
 ├── .gitignore
 ├── requirements.txt
 └── CHANGELOG.md
@@ -131,7 +136,7 @@ Runs extract → portfolio update → diff → git commit in sequence.
 ## Dependencies
 
 - Python 3.9+
-- beautifulsoup4, pandas, requests, lxml, python-dateutil
+- beautifulsoup4, pandas, requests, lxml, python-dateutil, python-dotenv
 
 ## Contributing
 

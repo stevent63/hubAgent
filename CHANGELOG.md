@@ -1,5 +1,15 @@
 # Changelog
 
+## Phase 3b — User Profile Separation + Massive API Naming (2026-04-14)
+- Renamed `context/CONTEXT.md` → `MARKET_AGENT_CONTEXT.md` at repo root
+- Extracted user-specific content into `user/chris.fiume@gmail.com.md`
+- Added User Profile Loading section to MARKET_AGENT_CONTEXT.md
+- Created `scripts/get_user.py` — reads USER_EMAIL from .env, returns profile path
+- Created `.env.example` with MASSIVE_API_KEY and USER_EMAIL template
+- Updated Polygon references → Massive (Polygon rebranded)
+- Added python-dotenv to requirements.txt
+- Updated README.md bootstrap template and architecture tree
+
 ## Phase 3 — Queryable History + Documentation (2026-04-14)
 - Built `scripts/signal_search.py` — 6 query patterns:
   - `ticker`: historical signals for a name with optional forward-days lookups
