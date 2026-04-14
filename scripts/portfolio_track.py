@@ -421,6 +421,59 @@ def cmd_stats(args):
     print()
 
 
+def cmd_update_exit(args):
+    """Update P&L on a closed trade (for backfilling missing broker data)."""
+    ledger = load_ledger()
+
+    target_idx = None
+    for i, row in enumerate(ledger):
+        if row['ticker'] == args.ticker and row['status'] == 'CLOSED':
+            target_idx = i
+            break
+
+    if target_idx is None:
+        log(f"ERROR: No CLOSED position for {args.ticker}")
+        sys.exit(1)
+
+    row = ledger[target_idx]
+    row['pnl_pct'] = args.pnl_pct
+
+    existing_notes = row.get('notes', '')
+    update_note = f"P&L updated to {args.pnl_pct}% from broker records"
+    row['notes'] = f"{existing_notes}; {update_note}" if existing_notes else update_note
+
+    ledger[target_idx] = row
+    save_ledger(ledger)
+    log(f"Updated {args.ticker} P&L to {args.pnl_pct}%")
+
+
+def cmd_remove(args):
+    """Soft-delete a position by marking status REMOVED_SEED_ERROR."""
+    ledger = load_ledger()
+
+    target_idx = None
+    for i, row in enumerate(ledger):
+        if row['ticker'] == args.ticker and row['status'] in ('OPEN', 'CLOSED'):
+            target_idx = i
+            break
+
+    if target_idx is None:
+        log(f"ERROR: No OPEN or CLOSED position for {args.ticker}")
+        sys.exit(1)
+
+    row = ledger[target_idx]
+    old_status = row['status']
+    row['status'] = 'REMOVED_SEED_ERROR'
+
+    reason = args.reason or 'seed cleanup — position not actually held'
+    existing_notes = row.get('notes', '')
+    row['notes'] = f"{existing_notes}; REMOVED: {reason}" if existing_notes else f"REMOVED: {reason}"
+
+    ledger[target_idx] = row
+    save_ledger(ledger)
+    log(f"Removed {args.ticker} (was {old_status}): {reason}")
+
+
 def cmd_verify(args):
     """Verify ledger integrity."""
     ledger = load_ledger()
@@ -433,7 +486,7 @@ def cmd_verify(args):
             issues.append(f"Row {i}: missing ticker")
         if not row.get('entry_date'):
             issues.append(f"Row {i} ({ticker}): missing entry_date")
-        if not row.get('status') or row['status'] not in ('OPEN', 'CLOSED'):
+        if not row.get('status') or row['status'] not in ('OPEN', 'CLOSED', 'REMOVED_SEED_ERROR'):
             issues.append(f"Row {i} ({ticker}): invalid status '{row.get('status')}'")
         if row['status'] == 'CLOSED':
             if not row.get('exit_date'):
@@ -485,6 +538,16 @@ def main():
     p_exit.add_argument('--pnl-pct', default='', help='Override P&L percentage (for seeding without parsed data)')
     p_exit.add_argument('--notes', default='', help='Notes to append')
 
+    # update-exit
+    p_update_exit = subparsers.add_parser('update-exit', help='Update P&L on a closed trade')
+    p_update_exit.add_argument('--ticker', required=True)
+    p_update_exit.add_argument('--pnl-pct', required=True, help='P&L percentage to set')
+
+    # remove
+    p_remove = subparsers.add_parser('remove', help='Soft-delete a position (REMOVED_SEED_ERROR)')
+    p_remove.add_argument('--ticker', required=True)
+    p_remove.add_argument('--reason', default='', help='Reason for removal')
+
     # update
     subparsers.add_parser('update', help='Update open positions with latest prices')
 
@@ -509,6 +572,8 @@ def main():
     commands = {
         'enter': cmd_enter,
         'exit': cmd_exit,
+        'update-exit': cmd_update_exit,
+        'remove': cmd_remove,
         'update': cmd_update,
         'status': cmd_status,
         'history': cmd_history,

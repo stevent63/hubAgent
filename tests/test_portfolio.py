@@ -221,6 +221,97 @@ class TestPortfolioCRUD:
         assert ledger[0]['thesis'] == 'Strong mode'
 
 
+class TestUpdateExitAndRemove:
+    """Test update-exit and remove commands."""
+
+    def setup_method(self):
+        self.tmpdir = tempfile.mkdtemp()
+        self._orig_root_extract = extract.REPO_ROOT
+        self._orig_root_pt = pt.REPO_ROOT
+        self._orig_ledger = pt.LEDGER_PATH
+
+        extract.REPO_ROOT = Path(self.tmpdir)
+        pt.REPO_ROOT = Path(self.tmpdir)
+        pt.LEDGER_PATH = Path(self.tmpdir) / 'master' / 'portfolio_ledger.csv'
+
+        for d in ['parsed_json', 'parsed_csv', 'master']:
+            os.makedirs(os.path.join(self.tmpdir, d))
+
+        data_13 = extract.parse_html(str(FIXTURE_DIR / '2026-04-13_daily.html'))
+        extract.write_json(data_13)
+        data_14 = extract.parse_html(str(FIXTURE_DIR / '2026-04-14_daily.html'))
+        extract.write_json(data_14)
+
+    def teardown_method(self):
+        extract.REPO_ROOT = self._orig_root_extract
+        pt.REPO_ROOT = self._orig_root_pt
+        pt.LEDGER_PATH = self._orig_ledger
+        shutil.rmtree(self.tmpdir)
+
+    def _enter_and_close(self, ticker):
+        """Helper: enter on 04-13, exit on 04-14."""
+        pt.cmd_enter(Args(ticker=ticker, date='2026-04-13', signal='Buy', conviction='MED', theme='Test', thesis=''))
+        pt.cmd_exit(Args(ticker=ticker, date='2026-04-14', signal='Sell'))
+
+    def test_update_exit_sets_pnl(self):
+        self._enter_and_close('AAPL')
+        # Override the computed P&L with a broker-confirmed value
+        pt.cmd_update_exit(Args(ticker='AAPL', pnl_pct='5.25'))
+        ledger = pt.load_ledger()
+        assert ledger[0]['pnl_pct'] == '5.25'
+        assert 'P&L updated to 5.25%' in ledger[0]['notes']
+
+    def test_update_exit_nonexistent_errors(self):
+        try:
+            pt.cmd_update_exit(Args(ticker='FAKE', pnl_pct='1.0'))
+            assert False, "Should have raised SystemExit"
+        except SystemExit:
+            pass
+
+    def test_update_exit_open_position_errors(self):
+        """update-exit should only work on CLOSED positions."""
+        pt.cmd_enter(Args(ticker='AAPL', date='2026-04-14', signal='Buy', conviction='', theme='', thesis=''))
+        try:
+            pt.cmd_update_exit(Args(ticker='AAPL', pnl_pct='1.0'))
+            assert False, "Should have raised SystemExit"
+        except SystemExit:
+            pass
+
+    def test_remove_open_position(self):
+        pt.cmd_enter(Args(ticker='AAPL', date='2026-04-14', signal='Buy', conviction='', theme='', thesis=''))
+        pt.cmd_remove(Args(ticker='AAPL', reason='not actually held'))
+        ledger = pt.load_ledger()
+        assert ledger[0]['status'] == 'REMOVED_SEED_ERROR'
+        assert 'not actually held' in ledger[0]['notes']
+
+    def test_remove_closed_position(self):
+        self._enter_and_close('AAPL')
+        pt.cmd_remove(Args(ticker='AAPL', reason='duplicate entry'))
+        ledger = pt.load_ledger()
+        assert ledger[0]['status'] == 'REMOVED_SEED_ERROR'
+        assert 'duplicate entry' in ledger[0]['notes']
+
+    def test_remove_default_reason(self):
+        pt.cmd_enter(Args(ticker='AAPL', date='2026-04-14', signal='Buy', conviction='', theme='', thesis=''))
+        pt.cmd_remove(Args(ticker='AAPL'))
+        ledger = pt.load_ledger()
+        assert 'seed cleanup' in ledger[0]['notes']
+
+    def test_remove_nonexistent_errors(self):
+        try:
+            pt.cmd_remove(Args(ticker='FAKE'))
+            assert False, "Should have raised SystemExit"
+        except SystemExit:
+            pass
+
+    def test_verify_accepts_removed(self):
+        """Verify should not flag REMOVED_SEED_ERROR as invalid."""
+        pt.cmd_enter(Args(ticker='AAPL', date='2026-04-14', signal='Buy', conviction='', theme='', thesis=''))
+        pt.cmd_remove(Args(ticker='AAPL', reason='test'))
+        pt.cmd_verify(Args())
+        # Should not raise — REMOVED_SEED_ERROR is a valid status
+
+
 class TestLookup:
     def test_lookup_ticker_found(self):
         data = {'signals': [{'ticker': 'AAPL', 'close': 260.49}, {'ticker': 'INTC', 'close': 25.73}]}
@@ -236,7 +327,7 @@ class TestLookup:
 if __name__ == '__main__':
     import traceback
 
-    test_classes = [TestPortfolioCRUD, TestLookup]
+    test_classes = [TestPortfolioCRUD, TestUpdateExitAndRemove, TestLookup]
     passed = 0
     failed = 0
     errors = []
