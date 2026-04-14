@@ -1,0 +1,64 @@
+entry_date,ticker,name,entry_signal,entry_mode,entry_mom,entry_r,entry_close,entry_revl,entry_tr_weeks,conviction,theme,thesis,exit_date,exit_signal,exit_close,exit_mom,holding_days,pnl_pct,pnl_dollars_per_share,status,notes,current_close,current_mom,current_mode,last_updated
+2026-03-11,SNDK,,spBuy,,,,,,,HIGH,Semi/Storage,Memory cycle capitulation — NAND flash deepest weekly compression,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-11
+2026-03-11,WDC,,spBuy,,,,,,,HIGH,Semi/Storage,Storage recovery alongside SNDK,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-11
+2026-03-11,STX,,spBuy,,,,,,,HIGH,Semi/Storage,Storage duopoly with WDC,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-11
+2026-03-11,INTC,,spBuy,,,,,,,HIGH,Semi,Semi capitulation entry — validated by +8.52 MoM acceleration,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-11
+2026-04-03,TER,,Buy,,,,,,,HIGH,Semi Test,Semi test duopoly (TER + Advantest) — 39-week compression,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,FORM,,Buy,,,,,,,HIGH,Semi Equipment,Probe card leader,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,MKSI,,Buy,,,,,,,HIGH,Semi Equipment,Vacuum/plasma control — elite R at flip,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,AEIS,,Buy,,,,,,,HIGH,Semi Power,Precision power conversion,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,GLW,,Buy,,,,,,,HIGH,Optical/Fiber,Corning fiber optic recovery,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,ASX,,Buy,,,,,,,HIGH,Semi Packaging,ASE Technology packaging,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-02,AMD,,Buy,,,,,,,HIGH,Semi/GPU,CPU/GPU cycle participation,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-02
+2026-04-07,PLAB,,Buy,,,,,,,MED,Semi Equipment,Photronics photomask leader,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-07
+2026-04-03,POWL,,Buy,,,,,,,HIGH,Power Infra,AI power grid infrastructure — fastest MoM accelerator,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-07,ENS,,Buy,,,,,,,MED,Power/Battery,EnerSys — stored energy systems,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-07
+2026-04-07,MOD,,Buy,,,,,,,MED,Power/Thermal,Modine thermal management,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-07
+2026-03-20,CENX,,spBuy+,,,,,,,HIGH,Mining/Aluminum,US aluminum supply deficit play,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-20
+2026-03-20,AA,,spBuy,,,,,,,HIGH,Mining/Aluminum,Alcoa — aluminum cycle turn,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-20
+2026-04-03,NEM,,Buy,,,,,,,HIGH,Mining/Gold,Gold mega-cap — institutional gold exposure,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,RGLD,,Buy,,,,,,,HIGH,Mining/Gold,Gold royalty — lower risk gold exposure,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-03-31,SSRM,,Buy,,,,,,,HIGH,Mining/Silver,SSR Mining — silver leader,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-31
+2026-04-03,PAAS,,Buy,,,,,,,MED,Mining/Silver,Pan American Silver broadening,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,SVM,,Buy,,,,,,,MED,Mining/Silver,Silvercorp Metals,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,TGB,,Buy,,,,,,,MED,Mining/Copper,Taseko Mines,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,IAG,,Buy,,,,,,,MED,Mining/Gold,Iamgold — smaller gold producer,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,NEXA,,Buy,,,,,,,MED,Mining/Zinc,Zinc / base metals diversification,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,BVN,,Buy,,,,,,,MED,Mining/LatAm,Buenaventura — Peru exposure,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,COPX,,Buy,,,,,,,MED,Mining/ETF,Copper miners ETF — broad exposure,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,GDX,,Buy,,,,,,,MED,Mining/ETF,Gold miners ETF,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,XBI,,Buy,,,,,,,MED,Biotech/ETF,Biotech ETF — broad biotech exposure,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-07,SPHR,,Buy,,,,,,,MED,Mining/Platinum,Sphere Entertainment — PGM exposure,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-07
+2026-03-31,BURL,,Buy,,,,,,,LOW,Consumer,Burlington — discount retail,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-31
+2026-04-08,PRAX,,Buy,,,,,,,HIGH,Biotech,Highest R biotech — elite signal with minimal extension,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-08
+2026-04-04,ARWR,,Buy,,,,,,,HIGH,Biotech/RNA,Arrowhead — RNA therapeutics platform,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-04
+2026-04-03,KYMR,,Buy,,,,,,,HIGH,Biotech,Kymera — protein degradation,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-03-24,BBIO,,Buy,,,,,,,HIGH,Biotech,BridgeBio — rare disease portfolio,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-24
+2026-03-31,APGE,,Buy,,,,,,,HIGH,Biotech,Apogee Therapeutics,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-31
+2026-04-03,COGT,,Buy,,,,,,,MED,Biotech,Cogent Biosciences,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,LQDA,,Buy,,,,,,,MED,Biotech,Liquidia Corp,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,DAN,,Buy,,,,,,,MED,Industrial,Dana Inc — industrials/autos,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-03-24,EWTX,,Buy,,,,,,,MED,Biotech,Edgewise Therapeutics,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-24
+2026-04-04,EIX,,Buy,,,,,,,MED,Utilities,Edison International — defensive positioning,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-04
+2026-04-04,AEP,,Buy,,,,,,,MED,Utilities,American Electric Power,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-04
+2026-04-04,NEE,,Buy,,,,,,,MED,Utilities,NextEra Energy — largest US utility,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-04
+2026-04-04,ATO,,Buy,,,,,,,LOW,Utilities,Atmos Energy — gas utility,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-04
+2026-03-28,GSAT,,Buy,,,,,,,HIGH,Satellite,Globalstar — direct-to-phone satellite,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-28
+2026-04-01,SATS,,Buy,,,,,,,HIGH,Satellite,EchoStar — satellite broadband,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-01
+2026-04-07,GS,,Buy,,,,,,,MED,Financials,Goldman — capital markets cycle,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-07
+2026-04-01,MBIN,,Buy,,,,,,,MED,Financials,Merchants Bancorp — niche bank,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-01
+2026-04-03,BSAC,,Buy,,,,,,,MED,LatAm/Banks,Banco Santander Chile,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,CAT,,Buy,,,,,,,HIGH,Industrials,Caterpillar — industrial bellwether (leader confirmed),,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-04-03,PSMT,,Buy,,,,,,,MED,Consumer/LatAm,PriceSmart — LatAm membership retail,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-02-28,FRO,,Buy,,,,,,,MED,Energy/Tankers,Frontline — tanker rates — last energy survivor,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-02-28
+2026-03-31,NGL,,Buy,,,,,,,MED,Energy/Midstream,NGL Energy Partners,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-31
+2026-03-31,ALB,,Buy,,,,,,,MED,Specialty Chem,Albemarle — lithium,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-03-31
+2026-04-03,CX,,Buy,,,,,,,MED,Building Materials,Cemex — LatAm cement,,,,,,,,OPEN,approximate entry — reconstructed from session history; awaiting historical backfill,,,,2026-04-03
+2026-03-31,AXGN,,Buy,,,,,,,MED,Biotech/Medtech,First portfolio exit of cycle,2026-04-08,Sell,,,6,,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; Sell signal after mode flipped Unknown,,,,2026-04-08
+2026-03-20,HCC,,Buy,,,,,,,MED,Energy/Coal,Metallurgical coal,2026-04-10,Sell,,,15,,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; Theme never fully participated,,,,2026-04-10
+2026-04-03,GH,,Buy,,,,,,,MED,Biotech/Dx,Triple Crown entry that failed,2026-04-10,Sell,,,5,-9.48,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; -9.48% loss,,,,2026-04-10
+2026-04-02,ETR,,Buy,,,,,,,MED,Utilities,Utility rotation play,2026-04-13,pP,,,7,4.42,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; First portfolio pP profit-take at +4.42%,,,,2026-04-13
+2026-04-03,KOD,,Buy,,,,,,,MED,Biotech,Kodiak Sciences,2026-04-13,pP,,,6,2.91,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; Profit-take at +2.91% — flat price with high MoM = mature,,,,2026-04-13
+2026-04-03,FCX,,Buy,,,,,,,HIGH,Mining/Copper,Copper supply deficit + metals broadening wave,2026-04-14,pP,,,7,11.98,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; Copper complex profit-take at +11.98%,,,,2026-04-14
+2026-04-03,HBM,,Buy,,,,,,,MED,Mining/Copper,Hudbay Minerals — copper complex,2026-04-14,pP,,,7,18.61,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; Copper complex profit-take at +18.61%,,,,2026-04-14
+2026-04-03,SCCO,,Buy,,,,,,,MED,Mining/Copper,Southern Copper — copper major,2026-04-14,pP,,,7,15.56,,CLOSED,approximate entry — reconstructed from session history; awaiting historical backfill; Copper complex profit-take at +15.56%,,,,2026-04-14

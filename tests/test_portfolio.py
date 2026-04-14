@@ -8,13 +8,22 @@ import sys
 import tempfile
 import shutil
 from pathlib import Path
-from unittest.mock import MagicMock
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 
 import extract
 import portfolio_track as pt
+
+
+class Args:
+    """Simple namespace for CLI args — unlike MagicMock, returns None for unset attrs."""
+    def __init__(self, **kwargs):
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
+    def __getattr__(self, name):
+        return None
 
 
 FIXTURE_DIR = PROJECT_ROOT / 'tests' / 'fixtures'
@@ -53,7 +62,7 @@ class TestPortfolioCRUD:
         assert ledger == []
 
     def test_enter_position(self):
-        args = MagicMock()
+        args = Args()
         args.ticker = 'AAPL'
         args.date = '2026-04-14'
         args.signal = 'Buy'
@@ -74,7 +83,7 @@ class TestPortfolioCRUD:
 
     def test_exit_position(self):
         # Enter first
-        enter_args = MagicMock()
+        enter_args = Args()
         enter_args.ticker = 'AAPL'
         enter_args.date = '2026-04-13'
         enter_args.signal = 'Buy'
@@ -84,7 +93,7 @@ class TestPortfolioCRUD:
         pt.cmd_enter(enter_args)
 
         # Exit
-        exit_args = MagicMock()
+        exit_args = Args()
         exit_args.ticker = 'AAPL'
         exit_args.date = '2026-04-14'
         exit_args.signal = 'pP'
@@ -98,7 +107,7 @@ class TestPortfolioCRUD:
         assert float(ledger[0]['pnl_pct']) > 0  # 258.10 → 260.49
 
     def test_pnl_calculation(self):
-        enter_args = MagicMock()
+        enter_args = Args()
         enter_args.ticker = 'AAPL'
         enter_args.date = '2026-04-13'
         enter_args.signal = 'Buy'
@@ -107,7 +116,7 @@ class TestPortfolioCRUD:
         enter_args.thesis = ''
         pt.cmd_enter(enter_args)
 
-        exit_args = MagicMock()
+        exit_args = Args()
         exit_args.ticker = 'AAPL'
         exit_args.date = '2026-04-14'
         exit_args.signal = 'Sell'
@@ -124,7 +133,7 @@ class TestPortfolioCRUD:
         assert days == 5
 
     def test_update_positions(self):
-        enter_args = MagicMock()
+        enter_args = Args()
         enter_args.ticker = 'AAPL'
         enter_args.date = '2026-04-13'
         enter_args.signal = 'Buy'
@@ -133,7 +142,7 @@ class TestPortfolioCRUD:
         enter_args.thesis = ''
         pt.cmd_enter(enter_args)
 
-        update_args = MagicMock()
+        update_args = Args()
         pt.cmd_update(update_args)
 
         ledger = pt.load_ledger()
@@ -142,7 +151,7 @@ class TestPortfolioCRUD:
         assert ledger[0]['last_updated'] == '2026-04-14'
 
     def test_exit_nonexistent_errors(self):
-        exit_args = MagicMock()
+        exit_args = Args()
         exit_args.ticker = 'FAKE'
         exit_args.date = '2026-04-14'
         exit_args.signal = 'Sell'
@@ -153,7 +162,7 @@ class TestPortfolioCRUD:
             pass
 
     def test_enter_missing_json_errors(self):
-        args = MagicMock()
+        args = Args()
         args.ticker = 'AAPL'
         args.date = '2025-01-01'  # No JSON for this date
         args.signal = 'Buy'
@@ -167,7 +176,7 @@ class TestPortfolioCRUD:
             pass
 
     def test_verify_clean(self):
-        enter_args = MagicMock()
+        enter_args = Args()
         enter_args.ticker = 'AAPL'
         enter_args.date = '2026-04-14'
         enter_args.signal = 'Buy'
@@ -176,13 +185,13 @@ class TestPortfolioCRUD:
         enter_args.thesis = ''
         pt.cmd_enter(enter_args)
 
-        verify_args = MagicMock()
+        verify_args = Args()
         pt.cmd_verify(verify_args)
         # Should not raise
 
     def test_multiple_entries(self):
         for ticker in ['AAPL', 'INTC', 'NEM']:
-            args = MagicMock()
+            args = Args()
             args.ticker = ticker
             args.date = '2026-04-14'
             args.signal = 'Buy'
@@ -196,7 +205,7 @@ class TestPortfolioCRUD:
         assert all(r['status'] == 'OPEN' for r in ledger)
 
     def test_save_load_roundtrip(self):
-        args = MagicMock()
+        args = Args()
         args.ticker = 'GS'
         args.date = '2026-04-14'
         args.signal = 'Buy'

@@ -107,16 +107,19 @@ def find_most_recent_json(file_type: str = 'daily') -> dict | None:
 # --- COMMANDS ---
 
 def cmd_enter(args):
-    """Enter a new position."""
-    data = load_parsed_json(args.date)
-    if not data:
-        log(f"ERROR: No parsed JSON for {args.date}. Run extract.py first.")
-        sys.exit(1)
+    """Enter a new position. With --force-seed, bypasses JSON lookup."""
+    force_seed = getattr(args, 'force_seed', False)
 
-    sig = lookup_ticker(data, args.ticker)
-    if not sig:
-        log(f"ERROR: Ticker {args.ticker} not found in {args.date} parsed data.")
-        sys.exit(1)
+    sig = {}
+    if not force_seed:
+        data = load_parsed_json(args.date)
+        if not data:
+            log(f"ERROR: No parsed JSON for {args.date}. Run extract.py first, or use --force-seed.")
+            sys.exit(1)
+        sig = lookup_ticker(data, args.ticker) or {}
+        if not sig:
+            log(f"ERROR: Ticker {args.ticker} not found in {args.date} parsed data.")
+            sys.exit(1)
 
     # Check for existing open position
     ledger = load_ledger()
@@ -125,17 +128,22 @@ def cmd_enter(args):
             log(f"WARNING: {args.ticker} already has an OPEN position (entered {row['entry_date']}). Adding new entry anyway.")
             break
 
+    # For --force-seed, use optional CLI overrides or leave blank
+    notes = getattr(args, 'notes', '') or ''
+    if force_seed and 'awaiting historical backfill' not in notes:
+        notes = f"awaiting historical backfill; {notes}" if notes else 'awaiting historical backfill'
+
     new_row = {
         'entry_date': args.date,
         'ticker': args.ticker,
-        'name': sig.get('name', ''),
+        'name': sig.get('name', '') or getattr(args, 'name', '') or '',
         'entry_signal': args.signal,
-        'entry_mode': sig.get('mode', ''),
-        'entry_mom': sig.get('mom', ''),
-        'entry_r': sig.get('r', ''),
-        'entry_close': sig.get('close', ''),
-        'entry_revl': sig.get('revl', ''),
-        'entry_tr_weeks': sig.get('tr_weeks', ''),
+        'entry_mode': sig.get('mode', '') or getattr(args, 'entry_mode', '') or '',
+        'entry_mom': sig.get('mom', '') if sig.get('mom') is not None else getattr(args, 'entry_mom', '') or '',
+        'entry_r': sig.get('r', '') if sig.get('r') is not None else getattr(args, 'entry_r', '') or '',
+        'entry_close': sig.get('close', '') or getattr(args, 'entry_close', '') or '',
+        'entry_revl': sig.get('revl', '') or getattr(args, 'entry_revl', '') or '',
+        'entry_tr_weeks': sig.get('tr_weeks', '') or getattr(args, 'entry_tr_weeks', '') or '',
         'conviction': getattr(args, 'conviction', ''),
         'theme': getattr(args, 'theme', ''),
         'thesis': getattr(args, 'thesis', ''),
@@ -147,16 +155,18 @@ def cmd_enter(args):
         'pnl_pct': '',
         'pnl_dollars_per_share': '',
         'status': 'OPEN',
-        'notes': '',
-        'current_close': sig.get('close', ''),
-        'current_mom': sig.get('mom', ''),
-        'current_mode': sig.get('mode', ''),
+        'notes': notes,
+        'current_close': sig.get('close', '') or getattr(args, 'entry_close', '') or '',
+        'current_mom': sig.get('mom', '') if sig.get('mom') is not None else getattr(args, 'entry_mom', '') or '',
+        'current_mode': sig.get('mode', '') or getattr(args, 'entry_mode', '') or '',
         'last_updated': args.date,
     }
 
     ledger.append(new_row)
     save_ledger(ledger)
-    log(f"Entered {args.ticker} @ {sig.get('close', '?')} on {args.date} ({args.signal}, {getattr(args, 'conviction', '')})")
+    close_str = sig.get('close', '?') if sig else (getattr(args, 'entry_close', '') or 'no-price')
+    seed_tag = ' [force-seed]' if force_seed else ''
+    log(f"Entered {args.ticker} @ {close_str} on {args.date} ({args.signal}, {getattr(args, 'conviction', '')}){seed_tag}")
 
 
 def cmd_exit(args):
@@ -198,6 +208,14 @@ def cmd_exit(args):
         pnl_pct = (exit_close - entry_close) / entry_close * 100
         pnl_dps = exit_close - entry_close
 
+    # Allow --pnl-pct override for seeding
+    pnl_override = getattr(args, 'pnl_pct', '') or ''
+    if pnl_override:
+        try:
+            pnl_pct = float(pnl_override)
+        except ValueError:
+            pass
+
     row['exit_date'] = args.date
     row['exit_signal'] = args.signal
     row['exit_close'] = exit_close if exit_close is not None else ''
@@ -209,6 +227,12 @@ def cmd_exit(args):
     row['current_close'] = exit_close if exit_close is not None else row.get('current_close', '')
     row['current_mom'] = exit_mom if exit_mom is not None else row.get('current_mom', '')
     row['last_updated'] = args.date
+
+    # Append notes if provided
+    exit_notes = getattr(args, 'notes', '') or ''
+    if exit_notes:
+        existing = row.get('notes', '')
+        row['notes'] = f"{existing}; {exit_notes}" if existing else exit_notes
 
     ledger[target_idx] = row
     save_ledger(ledger)
@@ -442,12 +466,24 @@ def main():
     p_enter.add_argument('--conviction', default='', help='Conviction level')
     p_enter.add_argument('--theme', default='', help='Theme/sector')
     p_enter.add_argument('--thesis', default='', help='Entry thesis')
+    p_enter.add_argument('--notes', default='', help='Free-text notes')
+    p_enter.add_argument('--force-seed', action='store_true',
+                         help='Skip JSON lookup — for seeding historical positions without parsed data')
+    p_enter.add_argument('--name', default='', help='Company name (force-seed only)')
+    p_enter.add_argument('--entry-close', default='', help='Entry close price (force-seed only)')
+    p_enter.add_argument('--entry-mode', default='', help='Entry mode (force-seed only)')
+    p_enter.add_argument('--entry-mom', default='', help='Entry MoM (force-seed only)')
+    p_enter.add_argument('--entry-r', default='', help='Entry R value (force-seed only)')
+    p_enter.add_argument('--entry-revl', default='', help='Entry RevL (force-seed only)')
+    p_enter.add_argument('--entry-tr-weeks', default='', help='Entry Tr weeks (force-seed only)')
 
     # exit
     p_exit = subparsers.add_parser('exit', help='Exit a position')
     p_exit.add_argument('--ticker', required=True)
     p_exit.add_argument('--date', required=True, help='Exit date YYYY-MM-DD')
     p_exit.add_argument('--signal', required=True, help='Exit signal (Sell, pP, etc.)')
+    p_exit.add_argument('--pnl-pct', default='', help='Override P&L percentage (for seeding without parsed data)')
+    p_exit.add_argument('--notes', default='', help='Notes to append')
 
     # update
     subparsers.add_parser('update', help='Update open positions with latest prices')
