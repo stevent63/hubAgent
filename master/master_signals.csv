@@ -1,0 +1,476 @@
+date,file_type,ticker,name,close,mode,mode_css,revl,mom,r,days,tr_weeks,pl_raw,pl_num,signal_type
+2026-04-15,daily,^BVSP,Brazil - BOVESPA,198657.33,Dark Green,c4,186167.97,8.34,0.83,13,56,+7.14%,7.14,pP
+2026-04-15,daily,$XAUUSD,Gold (spot),4841.81,Bear-Bull Flip,c20,4654.15,1.7,0.88,21,129,+3.64%,3.64,Buy
+2026-04-15,daily,$XAGUSD,Silver (spot),79.57,Bear-Bull Flip,c20,72.59,1.08,1.32,21,50,+1.19%,1.19,Buy
+2026-04-15,daily,^BEL20,Belgium - BEL20,5485.91,Dark Green,c4,5204.95,8.77,0.34,4,0,+1.82%,1.82,pP
+2026-04-15,daily,^TSX,Canada - TSX,34102.36,Dark Green,c4,32746.16,7.11,0.59,8,49,+4.34%,4.34,pP
+2026-04-15,daily,^MIB,Italy - MIB,48175.65,Dark Green,c4,45236.53,8.31,0.4,7,1,+7.05%,7.05,pP
+2026-04-15,daily,^WIG20,Poland - WIG20,3636.72,Dark Green,c4,3408.1,8.68,0.66,8,63,+6.75%,6.75,pP
+2026-04-15,daily,^DJT,Dow Transports,21263.78,Dark Green,c4,18930.96,9.66,0.5,9,23,+14.04%,14.04,pP+
+2026-04-15,daily,^J10Y,Japan 10Y Yield,2.42,Light Green,c5,2.28,7.75,,27,78,+9.07%,9.07,pP
+2026-04-15,daily,@KC,Coffee (KC),302.65,Bear-Bull Flip,c20,293.09,-0.73,-0.76,10,16,-2.80%,-2.8,Buy
+2026-04-15,daily,@CT,Cotton #2 (CT),76.52,Dark Green,c4,70.07,8.91,-0.4,35,6,+17.33%,17.33,pP+
+2026-04-15,daily,ADBE,Adobe Systems,235.72,Light Red,c7,248.64,-2.91,-1.08,21,14,+5.05%,5.05,dBuy
+2026-04-15,daily,AEP,American Electric Power Co,135.46,Light Green,c5,131.3,4.92,0.5,10,63,+3.08%,3.08,dSell
+2026-04-15,daily,APP,AppLovin Corp,433.51,Bear-Bull Flip,c20,401.53,-1.11,-0.5,18,11,-1.21%,-1.21,Buy
+2026-04-15,daily,AXON,Axon Enterprise,380.86,Light Red,c7,439.46,-7.88,-0.82,22,25,+24.75%,24.75,spBuy
+2026-04-15,daily,CHTR,Charter Communications,215.57,Bull-Bear Flip,c18,224.67,0.96,-0.85,5,4,-4.89%,-4.89,Sell
+2026-04-15,daily,CSX,CSX Corp,42.51,Dark Green,c4,40.43,7.04,0.47,9,47,+2.86%,2.86,pP
+2026-04-15,daily,DASH,DoorDash Inc,163.55,Bear-Bull Flip,c20,155.63,0.46,-0.71,64,22,+23.04%,23.04,Buy
+2026-04-15,daily,FAST,Fastenal Co,44.62,Bull-Bear Flip,c18,46.99,3.48,0.44,9,12,-4.15%,-4.15,Sell
+2026-04-15,daily,FER,Ferrovial SE,72.28,Dark Green,c4,66.07,9.38,0.62,8,70,+10.88%,10.88,pP+
+2026-04-15,daily,KHC,Kraft Heinz Co,22.11,Bull-Bear Flip,c18,22.91,2.29,-0.74,7,56,-2.98%,-2.98,Sell
+2026-04-15,daily,MSTR,Strategy Inc,137.41,Bear-Bull Flip,c20,127.95,-0.33,-1.09,12,32,-5.80%,-5.8,Buy
+2026-04-15,daily,NFLX,Netflix Inc,106.28,Dark Green,c4,95.48,8.0,-0.66,32,0,+12.70%,12.7,pP
+2026-04-15,daily,QCOM,Qualcomm Inc,132.84,Bear-Bull Flip,c20,128.96,-0.41,-0.88,63,12,+20.45%,20.45,Buy
+2026-04-15,daily,STX,Seagate Technology,533.44,Dark Green,c4,432.61,8.78,1.62,8,49,+33.03%,33.03,pP
+2026-04-15,daily,TMUS,T-Mobile US,190.0,Dark Red,c6,206.98,-6.67,-0.7,18,1,+8.79%,8.79,spBuy+
+2026-04-15,daily,TTWO,Take-Two Interactive,205.1,Bear-Bull Flip,c20,197.95,0.68,-0.66,20,10,+1.89%,1.89,Buy
+2026-04-15,daily,A,Agilent Technologies,120.39,Bear-Bull Flip,c20,114.98,2.39,-0.68,59,9,+12.76%,12.76,Buy
+2026-04-15,daily,APD,Air Products & Chemicals,296.63,Light Green,c5,287.97,3.2,-0.2,22,10,+0.30%,0.3,dSell
+2026-04-15,daily,APO,Apollo Global Management,114.82,Bear-Bull Flip,c20,107.94,-0.95,-0.75,58,10,+18.27%,18.27,Buy
+2026-04-15,daily,ARES,Ares Management,112.61,Bear-Bull Flip,c20,103.9,-0.6,-1.2,58,11,+31.79%,31.79,Buy
+2026-04-15,daily,AVB,Avalonbay Communities,171.0,Bear-Bull Flip,c20,167.21,2.96,-0.68,24,56,+1.63%,1.63,Buy
+2026-04-15,daily,BG,Bunge Global,122.33,Bull-Bear Flip,c18,126.43,-0.53,0.82,25,35,-0.58%,-0.58,Sell
+2026-04-15,daily,BK,Bank of New York Mellon,130.51,Dark Green,c4,121.85,8.33,0.64,9,49,+8.46%,8.46,pP
+2026-04-15,daily,BRK-B,Berkshire Hathaway,477.54,Unknown,,484.5,0.17,-0.48,3,3,-1.34%,-1.34,Sell
+2026-04-15,daily,BXP,Boston Properties,55.03,Bear-Bull Flip,c20,52.82,0.57,-0.94,79,16,+21.21%,21.21,Buy
+2026-04-15,daily,CFG,Citizens Financial Group,64.87,Dark Green,c4,59.78,8.29,0.67,8,1,+9.08%,9.08,pP
+2026-04-15,daily,COP,ConocoPhillips,118.79,Bull-Bear Flip,c18,126.09,-2.9,0.48,71,17,+25.77%,25.77,Sell
+2026-04-15,daily,CTRA,Cottera Energy,31.67,Bull-Bear Flip,c18,34.11,-2.7,0.69,58,22,+18.39%,18.39,Sell
+2026-04-15,daily,DELL,Dell Technologies,184.51,Light Green,c5,163.81,5.8,0.72,36,6,+52.16%,52.16,pP
+2026-04-15,daily,DVN,Devon Energy,45.25,Bull-Bear Flip,c18,48.6,-2.66,0.5,62,21,+21.97%,21.97,Sell
+2026-04-15,daily,EOG,EOG Resources,133.59,Bull-Bear Flip,c18,139.8,-2.7,0.25,62,10,+22.98%,22.98,Sell
+2026-04-15,daily,EQIX,Equinix Inc,1057.37,Dark Green,c4,990.87,7.11,0.54,71,13,+37.37%,37.37,pP
+2026-04-15,daily,EQT,EQT Corp,56.71,Dark Red,c6,62.6,-6.82,0.52,8,10,+8.66%,8.66,spBuy
+2026-04-15,daily,EXE,Expand Energy,95.69,Dark Red,c6,105.01,-6.23,-0.37,8,0,+10.43%,10.43,spBuy+
+2026-04-15,daily,FCX,Freeport-McMoRan,68.27,Dark Green,c4,59.5,8.53,1.01,9,1,+12.38%,12.38,pP
+2026-04-15,daily,GDDY,GoDaddy Inc,79.32,Dark Red,c6,84.85,-1.4,-1.44,85,42,+37.61%,37.61,AddSh
+2026-04-15,daily,GL,Globe Life Inc,148.2,Dark Green,c4,140.18,7.06,0.28,8,1,+6.19%,6.19,pP
+2026-04-15,daily,HOOD,Robinhood Markets,79.09,Bear-Bull Flip,c20,70.76,0.44,-0.8,82,10,+34.31%,34.31,Buy
+2026-04-15,daily,HRL,Hormel Foods Corp,20.76,Dark Red,c6,22.5,-7.91,-0.71,27,4,+14.21%,14.21,spBuy
+2026-04-15,daily,IQV,Iqvia Holdings,175.28,Bear-Bull Flip,c20,168.56,0.67,-0.67,50,9,+23.37%,23.37,Buy
+2026-04-15,daily,IT,Gartner Inc,149.1,Light Red,c7,158.65,-2.55,-1.33,69,59,+36.72%,36.72,dBuy
+2026-04-15,daily,IVZ,Invesco Ltd,24.72,Bear-Bull Flip,c20,23.51,0.29,0.64,53,5,+8.10%,8.1,Buy
+2026-04-15,daily,JBHT,JB Hunt Transport Services,229.61,Dark Green,c4,212.21,6.89,0.75,9,25,+8.18%,8.18,pP
+2026-04-15,daily,KEY,KeyCorp,21.63,Dark Green,c4,20.13,8.02,0.4,8,0,+7.67%,7.67,pP
+2026-04-15,daily,KO,Coca Cola Co,75.9,Bull-Bear Flip,c18,77.33,1.69,0.36,4,24,-0.98%,-0.98,Sell
+2026-04-15,daily,LLY,Eli Lilly & Co,922.5,Bull-Bear Flip,c18,951.22,1.39,0.35,8,3,-2.38%,-2.38,Sell
+2026-04-15,daily,LVS,Las Vegas Sands,55.52,Bear-Bull Flip,c20,53.39,1.35,0.12,71,10,+14.77%,14.77,Buy
+2026-04-15,daily,LW,Lamb Weston Holdings,43.73,Bear-Bull Flip,c20,41.35,1.31,-0.98,30,21,+6.04%,6.04,Buy
+2026-04-15,daily,MRNA,Moderna Inc,52.84,Bear-Bull Flip,c20,49.53,0.09,0.8,11,16,-6.04%,-6.04,Buy
+2026-04-15,daily,NCLH,Norwegian Cruise Line,21.09,Bear-Bull Flip,c20,19.32,1.7,-0.53,30,5,+1.17%,1.17,Buy
+2026-04-15,daily,NEE,NextEra Energy,91.31,Bull-Bear Flip,c18,93.35,1.73,0.48,10,43,-1.03%,-1.03,Sell
+2026-04-15,daily,NKE,Nike Inc,44.2,Light Red,c7,51.85,-9.55,-0.91,31,28,+26.21%,26.21,spBuy
+2026-04-15,daily,NVR,NVR Inc,6843.71,Bear-Bull Flip,c20,6642.35,2.51,-0.72,40,5,+8.18%,8.18,Buy
+2026-04-15,daily,PAYC,Paycom Software,119.84,Light Red,c7,124.83,-2.21,-1.18,22,39,+5.67%,5.67,dBuy
+2026-04-15,daily,PCG,PG&E Corp,17.56,Bull-Bear Flip,c18,18.06,2.68,0.36,4,9,-4.15%,-4.15,Sell
+2026-04-15,daily,PPL,PPL Corp,39.61,Light Green,c5,38.41,5.82,0.2,10,12,+3.72%,3.72,dSell
+2026-04-15,daily,REG,Regency Centers,79.57,Dark Green,c4,76.26,5.2,0.2,7,12,+3.42%,3.42,pP
+2026-04-15,daily,TAP,Molson Coors Brewing,43.66,Bull-Bear Flip,c18,44.84,3.04,-0.57,5,5,-3.24%,-3.24,Sell
+2026-04-15,daily,TPL,Texas Pacific Land Trust,412.2,Light Red,c7,479.29,-7.94,0.96,10,12,+12.07%,12.07,spBuy
+2026-04-15,daily,VMC,Vulcan Materials Co,296.86,Dark Green,c4,274.65,8.12,-0.36,8,5,+7.45%,7.45,pP
+2026-04-15,daily,VST,Vistra Energy,163.97,Bear-Bull Flip,c20,153.25,0.81,-0.49,16,21,-8.27%,-8.27,Buy
+2026-04-15,daily,WAB,Westinghouse Air Brake Techn.,268.29,Dark Green,c4,249.76,8.42,0.77,9,27,+6.31%,6.31,pP
+2026-04-15,daily,WM,Waste Management,227.09,Bull-Bear Flip,c18,233.56,0.07,0.24,7,15,-3.11%,-3.11,Sell
+2026-04-15,daily,WRB,W.R. Berkley,65.99,Dark Red,c6,67.39,0.55,-0.49,27,18,+4.83%,4.83,AddSh
+2026-04-15,daily,WTW,Willis Tower Watson,288.48,Light Red,c7,292.97,-1.06,-0.66,44,10,+0.49%,0.49,dBuy
+2026-04-15,daily,AAL,American Airlines Group,12.13,Bear-Bull Flip,c20,10.96,3.0,-0.65,41,6,+13.91%,13.91,Buy
+2026-04-15,daily,ALK,Alaska Air Group,42.62,Bear-Bull Flip,c20,39.12,1.65,-0.79,31,5,+14.76%,14.76,Buy
+2026-04-15,daily,ALLY,Ally Financial,42.57,Dark Green,c4,39.47,6.0,-0.34,8,11,+8.90%,8.9,pP
+2026-04-15,daily,AMH,American Homes 4 Rent,30.12,Dark Green,c4,28.5,6.64,-0.74,7,41,+3.61%,3.61,pP
+2026-04-15,daily,ANF,Abercrombie & Fitch,91.26,Bull-Bear Flip,c18,96.03,4.28,-0.61,9,5,-0.78%,-0.78,Sell
+2026-04-15,daily,AR,Antero Resources,36.11,Dark Red,c6,41.14,-6.82,0.33,6,10,+11.93%,11.93,spBuy
+2026-04-15,daily,ASB,Associated Banc-Corp,27.52,Dark Green,c4,25.74,8.09,-0.13,8,0,+7.25%,7.25,pP
+2026-04-15,daily,AYI,Acuity Brands,284.86,Bear-Bull Flip,c20,275.38,1.0,-0.7,41,12,+8.88%,8.88,Buy
+2026-04-15,daily,BLD,TopBuild Corp,400.58,Bear-Bull Flip,c20,380.64,3.82,-0.06,33,5,+14.77%,14.77,Buy
+2026-04-15,daily,CHDN,Churchill Downs,91.94,Bear-Bull Flip,c20,87.69,1.57,-0.78,66,11,+15.74%,15.74,Buy
+2026-04-15,daily,CLH,Clean Harbors,304.41,Light Green,c5,289.02,5.3,0.7,15,18,+7.07%,7.07,dSell
+2026-04-15,daily,COKE,Coca-Cola Bottling,192.1,Bull-Bear Flip,c18,200.32,2.43,1.06,8,26,-4.43%,-4.43,Sell
+2026-04-15,daily,CRBG,Corebridge Financial,25.57,Bear-Bull Flip,c20,24.35,2.16,-0.99,37,29,+13.99%,13.99,Buy
+2026-04-15,daily,EXLS,Exlservice Holdings,30.72,Light Red,c7,31.1,-1.05,-1.13,53,10,+24.00%,24.0,dBuy
+2026-04-15,daily,FHI,Federated Hermes,58.3,Bear-Bull Flip,c20,55.74,-0.04,0.58,2,50,-5.99%,-5.99,Buy
+2026-04-15,daily,FOUR,Shift4 Payments,46.78,Bear-Bull Flip,c20,43.47,-0.96,-1.32,11,35,-5.15%,-5.15,Buy
+2026-04-15,daily,FTI,TechnipFMC,72.0,Light Green,c5,68.32,5.74,1.46,69,47,+47.36%,47.36,dSell
+2026-04-15,daily,GME,GameStop Corp,24.03,Bear-Bull Flip,c20,22.82,1.14,-0.51,21,2,-1.52%,-1.52,Buy
+2026-04-15,daily,GMED,Globus Medical,94.94,Dark Green,c4,87.7,5.18,0.75,5,22,+2.47%,2.47,pP
+2026-04-15,daily,GTM,ZoomInfo,5.79,Light Red,c7,6.06,-2.77,-1.22,60,21,+42.27%,42.27,dBuy
+2026-04-15,daily,HAE,Haemonetics Corp,60.48,Bear-Bull Flip,c20,57.81,1.86,-0.64,24,10,+3.03%,3.03,Buy
+2026-04-15,daily,HOG,Harley-Davidson,23.17,Dark Green,c4,20.51,9.03,-0.96,12,0,+19.43%,19.43,pP
+2026-04-15,daily,ILMN,Illumina Inc,130.32,Bear-Bull Flip,c20,122.6,0.92,0.4,2,27,-8.05%,-8.05,Buy
+2026-04-15,daily,IRT,Independence Realty Trust,15.7,Bear-Bull Flip,c20,15.27,1.21,-0.63,26,10,+3.92%,3.92,Buy
+2026-04-15,daily,LECO,Lincoln Electric Holdings,262.29,Bear-Bull Flip,c20,253.83,0.85,0.49,27,1,+2.26%,2.26,Buy
+2026-04-15,daily,LITE,Lumentum Holdings,852.79,Light Green,c5,743.84,6.26,2.49,53,47,+126.85%,126.85,dSell
+2026-04-15,daily,MTDR,Matador Resources,57.33,Bull-Bear Flip,c18,60.42,-0.73,0.36,61,9,+34.14%,34.14,Sell
+2026-04-15,daily,MTZ,MasTec Inc,365.89,Dark Green,c4,318.43,8.22,1.37,76,49,+63.21%,63.21,pP
+2026-04-15,daily,NSA,National Storage Affiliates,42.44,Dark Green,c4,38.08,8.05,0.25,20,3,+3.94%,3.94,pP
+2026-04-15,daily,NWE,Northwestern Corp,73.28,Dark Green,c4,67.13,6.83,0.45,7,1,+8.69%,8.69,pP
+2026-04-15,daily,OPCH,Option Care Health,27.9,Unknown,,29.31,1.48,-0.27,3,5,-5.49%,-5.49,Sell
+2026-04-15,daily,OVV,Ovintiv Inc,54.8,Bull-Bear Flip,c18,56.85,-1.97,0.65,61,11,+37.86%,37.86,Sell
+2026-04-15,daily,PII,Polaris Industries,57.49,Bear-Bull Flip,c20,54.34,0.95,-0.32,41,5,+12.62%,12.62,Buy
+2026-04-15,daily,PINS,Pinterest,18.7,Bear-Bull Flip,c20,18.0,-0.99,-1.27,22,28,-2.35%,-2.35,Buy
+2026-04-15,daily,PSTG,Pure Storage Inc,64.0,Bear-Bull Flip,c20,61.1,0.05,-0.61,35,18,+6.72%,6.72,Buy
+2026-04-15,daily,REXR,Rexford Industrial Realty,35.29,Bear-Bull Flip,c20,33.87,1.82,-0.71,46,15,+10.88%,10.88,Buy
+2026-04-15,daily,RGEN,Repligen Corp,131.03,Bear-Bull Flip,c20,119.19,2.23,-0.72,52,9,+17.57%,17.57,Buy
+2026-04-15,daily,SAIA,Saia Inc,404.47,Dark Green,c4,355.72,8.18,0.53,9,0,+13.65%,13.65,pP
+2026-04-15,daily,SATS,EchoStar Corp,130.47,Dark Green,c4,117.49,4.03,1.49,13,42,+11.25%,11.25,Add
+2026-04-15,daily,SEIC,SEI Investments Co,79.8,Bear-Bull Flip,c20,77.1,0.06,-0.5,24,8,-0.01%,-0.01,Buy
+2026-04-15,daily,TLN,Talen Energy,345.76,Bear-Bull Flip,c20,320.55,0.45,-0.61,30,5,-1.74%,-1.74,Buy
+2026-04-15,daily,USFD,US Foods Holding,92.47,Bear-Bull Flip,c20,90.15,0.34,0.74,18,19,-4.58%,-4.58,Buy
+2026-04-15,daily,VAL,Valaris Ltd,92.01,Bull-Bear Flip,c18,97.66,0.5,1.43,67,43,+73.77%,73.77,Sell
+2026-04-15,daily,WH,Wyndham Hotels & Resorts,87.38,Dark Green,c4,80.24,6.05,-0.41,13,1,+10.58%,10.58,pP
+2026-04-15,daily,WING,Wingstop Inc,198.08,Bear-Bull Flip,c20,179.45,1.64,-1.05,30,30,+15.46%,15.46,Buy
+2026-04-15,daily,WMG,Warner Music Group,29.05,Dark Green,c4,26.13,8.27,-0.7,7,22,+12.08%,12.08,pP
+2026-04-15,daily,XRAY,DENTSPLY Sirona,12.22,Bear-Bull Flip,c20,11.53,1.34,-0.78,26,4,+2.24%,2.24,Buy
+2026-04-15,daily,YETI,YETI Holdings,39.19,Bear-Bull Flip,c20,37.24,0.41,0.23,35,5,+13.79%,13.79,Buy
+2026-04-15,daily,ZION,Zions Bancorp,61.69,Dark Green,c4,56.94,7.91,0.23,13,0,+9.17%,9.17,pP
+2026-04-15,daily,ABR,Arbor Realty Trust,7.8,Bear-Bull Flip,c20,7.47,0.17,-1.04,21,23,-0.78%,-0.78,Buy
+2026-04-15,daily,ACIW,ACI Worldwide Inc,41.45,Bear-Bull Flip,c20,40.05,0.68,-0.76,2,21,-4.65%,-4.65,Buy
+2026-04-15,daily,AHRT,AH Realty Trust,5.78,Bear-Bull Flip,c20,5.55,1.38,-0.83,41,7,+16.11%,16.11,Buy
+2026-04-15,daily,ALGT,Allegiant Travel,89.85,Bear-Bull Flip,c20,82.58,2.04,0.72,30,5,+4.16%,4.16,Buy
+2026-04-15,daily,AMRX,Amneal Pharmaceuticals,13.12,Bear-Bull Flip,c20,12.57,2.29,0.84,31,40,+5.41%,5.41,Buy
+2026-04-15,daily,ANGI,Angi Inc,7.59,Bear-Bull Flip,c20,7.13,-0.02,-1.33,24,26,+8.77%,8.77,Buy
+2026-04-15,daily,APAM,Artisan Partners Asset Mgmt,37.86,Bear-Bull Flip,c20,36.45,1.35,-0.73,40,7,+11.89%,11.89,Buy
+2026-04-15,daily,ARCB,ArcBest Corp,110.16,Dark Green,c4,98.21,8.06,0.65,13,17,+16.61%,16.61,pP
+2026-04-15,daily,ATEN,A10 Networks,25.05,Light Green,c5,22.57,7.78,0.59,46,9,+28.73%,28.73,pP
+2026-04-15,daily,AZTA,Azenta,24.26,Bear-Bull Flip,c20,22.5,2.32,-1.01,49,9,+35.58%,35.58,Buy
+2026-04-15,daily,BGC,BGC Group,11.58,Dark Green,c4,10.32,9.04,-0.3,21,7,+19.38%,19.38,pP
+2026-04-15,daily,BTU,Peabody Energy,27.69,Dark Red,c6,33.91,-7.17,0.98,9,0,+16.34%,16.34,spBuy
+2026-04-15,daily,CARG,CarGurus,35.77,Dark Green,c4,33.09,1.23,-0.46,32,2,+16.74%,16.74,Add
+2026-04-15,daily,CATY,Cathay General Bancorp,53.86,Dark Green,c4,49.88,8.21,0.19,8,0,+7.91%,7.91,pP
+2026-04-15,daily,CLB,Core Laboratories,16.27,Bull-Bear Flip,c18,17.11,0.6,0.57,5,2,-4.29%,-4.29,Sell
+2026-04-15,daily,CRGY,Crescent Energy,12.18,Bull-Bear Flip,c18,12.8,-0.65,0.59,57,10,+42.46%,42.46,Sell
+2026-04-15,daily,CRK,Comstock Resources,16.25,Dark Red,c6,20.03,-6.7,-0.28,8,1,+16.96%,16.96,spBuy+
+2026-04-15,daily,CUBI,Customers Bancorp,75.94,Dark Green,c4,69.12,6.75,0.45,9,0,+8.05%,8.05,pP
+2026-04-15,daily,DCH,Dauch Corp,6.21,Bear-Bull Flip,c20,5.76,1.67,0.34,40,5,+13.75%,13.75,Buy
+2026-04-15,daily,ESE,ESCO Technologies,318.24,Dark Green,c4,279.51,8.35,1.08,67,13,+53.74%,53.74,pP
+2026-04-15,daily,EZPW,EZCorp Inc,29.69,Dark Green,c4,26.71,8.1,1.25,8,35,+14.68%,14.68,pP
+2026-04-15,daily,FBP,First Bancorp,22.76,Dark Green,c4,21.31,7.63,-0.17,8,0,+6.55%,6.55,pP
+2026-04-15,daily,FBRT,Franklin BSP Realty Trust,8.83,Bear-Bull Flip,c20,8.6,0.28,-0.86,44,26,+13.26%,13.26,Buy
+2026-04-15,daily,FCF,First Commonwealth Financial,18.8,Dark Green,c4,17.62,8.38,0.22,9,1,+6.58%,6.58,pP
+2026-04-15,daily,FOXF,Fox Factory Holding,17.6,Bear-Bull Flip,c20,16.41,0.0,-1.02,10,29,-5.39%,-5.39,Buy
+2026-04-15,daily,FRPT,Freshpet Inc,69.11,Bear-Bull Flip,c20,65.16,2.11,-0.3,20,2,+9.22%,9.22,Buy
+2026-04-15,daily,FTDR,Frontdoor Inc,59.56,Bear-Bull Flip,c20,56.18,0.68,0.29,18,3,+0.77%,0.77,Buy
+2026-04-15,daily,GDYN,Grid Dynamics Holdings,5.56,Light Red,c7,6.08,-2.97,-1.15,59,56,+37.88%,37.88,dBuy
+2026-04-15,daily,HOPE,Hope Bancorp,12.2,Light Green,c5,11.35,8.37,-0.08,8,1,+7.11%,7.11,pP
+2026-04-15,daily,JBGS,JBG Smith Properties,15.16,Bear-Bull Flip,c20,14.62,-1.19,-0.83,11,22,-2.09%,-2.09,Buy
+2026-04-15,daily,KALU,Kaiser Aluminum,142.46,Dark Green,c4,125.93,8.65,0.99,8,1,+12.89%,12.89,pP
+2026-04-15,daily,KMX,CarMax Inc,41.66,Bull-Bear Flip,c18,45.17,4.64,-0.83,6,0,-2.98%,-2.98,Sell
+2026-04-15,daily,MBIN,Merchants Bancorp,47.52,Dark Green,c4,43.48,7.81,0.75,12,18,+10.74%,10.74,pP
+2026-04-15,daily,MGY,Magnolia Oil & Gas,28.6,Bull-Bear Flip,c18,30.44,-2.88,0.49,62,11,+25.88%,25.88,Sell
+2026-04-15,daily,MPT,Medical Properties Trust,5.01,Bear-Bull Flip,c20,4.83,2.26,-0.34,24,4,+5.83%,5.83,Buy
+2026-04-15,daily,MYGN,Myriad Genetics,4.91,Bear-Bull Flip,c20,4.53,-0.12,-1.16,25,78,+5.21%,5.21,Buy
+2026-04-15,daily,NABL,N-able Inc,4.66,Light Red,c7,4.85,-2.37,-1.22,75,87,+36.60%,36.6,dBuy
+2026-04-15,daily,NHC,National Healthcare Corp,163.5,Light Green,c5,162.97,3.67,1.06,6,34,-0.69%,-0.69,dSell
+2026-04-15,daily,NXRT,NexPoint Residential Trust,26.62,Bear-Bull Flip,c20,25.64,0.81,-0.87,41,56,+9.98%,9.98,Buy
+2026-04-15,daily,OMCL,Omnicell Inc,36.33,Bear-Bull Flip,c20,34.66,1.01,-0.08,48,9,+24.69%,24.69,Buy
+2026-04-15,daily,OSW,OneSpaWorld Holdings,24.75,Dark Green,c4,22.39,6.91,0.33,17,8,+14.27%,14.27,pP
+2026-04-15,daily,OTTR,Otter Tail Corp,88.33,Light Green,c5,87.86,3.99,0.07,9,22,+0.95%,0.95,dSell
+2026-04-15,daily,OXM,Oxford Industries,44.22,Dark Green,c4,37.1,8.36,-0.8,9,0,+15.25%,15.25,pP
+2026-04-15,daily,PAYO,Payoneer Global,4.97,Bear-Bull Flip,c20,4.69,-0.5,-0.97,4,8,-6.65%,-6.65,Buy
+2026-04-15,daily,PRG,PROG Holdings,30.57,Bear-Bull Flip,c20,28.95,1.34,-0.44,30,4,+6.28%,6.28,Buy
+2026-04-15,daily,PRKS,United Parks & Resorts,37.7,Dark Green,c4,33.68,7.5,-1.0,7,23,+12.07%,12.07,pP
+2026-04-15,daily,PSMT,Pricesmart Inc,156.72,Light Green,c5,149.8,4.25,1.04,9,52,+4.21%,4.21,dSell
+2026-04-15,daily,PTEN,Patterson-UTI Energy,9.88,Bull-Bear Flip,c18,10.43,-1.72,0.81,70,14,+60.65%,60.65,Sell
+2026-04-15,daily,QDEL,QuidelOrtho Corp,17.32,Light Red,c7,18.0,-2.64,-1.15,57,8,+42.59%,42.59,dBuy
+2026-04-15,daily,QRVO,Qorvo Inc,80.61,Bear-Bull Flip,c20,78.08,1.6,-0.56,11,20,-4.05%,-4.05,Buy
+2026-04-15,daily,RXO,RXO Inc,16.24,Dark Green,c4,14.59,5.2,-0.56,13,0,+14.69%,14.69,Add
+2026-04-15,daily,SOLS,Solstice Advance Materials,80.22,Light Green,c5,75.23,5.33,1.05,13,13,+7.85%,7.85,dSell
+2026-04-15,daily,STBA,S & T Bancorp,43.87,Light Green,c5,41.51,6.24,0.34,9,1,+4.83%,4.83,dSell
+2026-04-15,daily,STEP,StepStone,52.63,Bear-Bull Flip,c20,47.55,0.94,-0.78,50,9,+25.45%,25.45,Buy
+2026-04-15,daily,TMDX,TransMedics Group,115.68,Bear-Bull Flip,c20,109.07,1.72,-0.25,26,3,+7.65%,7.65,Buy
+2026-04-15,daily,TMP,Tompkins Financial,84.32,Dark Green,c4,78.17,8.4,0.45,9,20,+6.92%,6.92,pP
+2026-04-15,daily,TRUP,Trupanion Inc,26.26,Light Red,c7,26.37,-0.77,-1.17,68,31,+27.18%,27.18,dBuy
+2026-04-15,daily,UNIT,Uniti Group,10.92,Light Green,c5,9.46,9.74,0.49,10,17,+31.88%,31.88,pP
+2026-04-15,daily,UPBD,Upbound Group,19.34,Bear-Bull Flip,c20,18.01,0.89,-0.79,26,4,-0.62%,-0.62,Buy
+2026-04-15,daily,VCYT,Veracyte Inc,34.3,Bear-Bull Flip,c20,31.91,-0.17,-0.39,30,8,+2.14%,2.14,Buy
+2026-04-15,daily,VIRT,Virtu Financial,51.28,Dark Green,c4,44.61,9.77,0.51,16,11,+22.59%,22.59,pP+
+2026-04-15,daily,VSNT,Versant,41.15,Dark Green,c4,36.4,7.05,-1.32,32,69,+26.30%,26.3,pP
+2026-04-15,daily,WAY,Waystar Holding Corp,22.43,Light Red,c7,24.14,-3.86,-1.32,24,23,+10.06%,10.06,dBuy
+2026-04-15,daily,WSFS,WSFS Financial,69.24,Dark Green,c4,64.88,7.21,0.53,14,17,+6.39%,6.39,pP
+2026-04-15,daily,WU,Western Union Co,9.16,Bear-Bull Flip,c20,8.89,0.08,-0.4,20,2,+1.72%,1.72,Buy
+2026-04-15,daily,AGG,iSh. Core US Aggregate Bond ET,99.78,Bear-Bull Flip,c20,99.34,2.01,-0.39,30,4,+0.48%,0.48,Buy
+2026-04-15,daily,AGQ,ProShares Ultra Silver ETF,132.16,Bear-Bull Flip,c20,114.87,1.14,,29,3,+13.91%,13.91,Buy
+2026-04-15,daily,BINC,iSh. Flexible Income Active ET,52.36,Bear-Bull Flip,c20,52.1,4.41,-0.35,30,5,+0.59%,0.59,Buy
+2026-04-15,daily,BIV,Vanguard Interm-Term Bond ETF,77.56,Bear-Bull Flip,c20,77.2,1.61,-0.39,29,4,+0.97%,0.97,Buy
+2026-04-15,daily,BIZD,VanEck BDC Income ETF,12.85,Bear-Bull Flip,c20,12.41,-1.29,-0.8,54,30,+9.32%,9.32,Buy
+2026-04-15,daily,BND,Vanguard Total Bond Market ETF,73.98,Bear-Bull Flip,c20,73.66,1.81,-0.39,30,4,+0.47%,0.47,Buy
+2026-04-15,daily,BRF,VanEck Brazil Small-Cap ETF,20.02,Dark Green,c4,18.19,8.73,0.48,9,1,+8.22%,8.22,pP+
+2026-04-15,daily,BXSL,Blackstone Secured Lending Fun,24.14,Bear-Bull Flip,c20,23.32,-1.59,-0.79,16,35,0.00%,0.0,Buy
+2026-04-15,daily,CEF,Sprott Ph. Gold & Silver Trust,49.93,Bear-Bull Flip,c20,47.17,2.35,1.02,21,129,+2.78%,2.78,Buy
+2026-04-15,daily,COLO,Global X Colombia ETF,42.08,Dark Green,c4,39.4,6.54,0.73,10,63,+8.04%,8.04,pP
+2026-04-15,daily,DFEN,Direxion Aerosp. & Defense Bul,77.9,Bear-Bull Flip,c20,70.83,2.82,,22,3,-0.93%,-0.93,Buy
+2026-04-15,daily,DRV,Direxion Real Estate Bear 3X,20.7,Dark Red,c6,23.58,-7.22,,4,0,+7.26%,7.26,spBuy+
+2026-04-15,daily,EDEN,iSh. MSCI Denmark ETF,111.73,Dark Green,c4,104.97,8.68,-0.48,4,6,+4.20%,4.2,pP+
+2026-04-15,daily,EFA,iSh. MSCI EAFE ETF,103.64,Dark Green,c4,98.03,8.28,0.29,8,0,+7.35%,7.35,pP
+2026-04-15,daily,EFNL,iSh. MSCI Finland ETF,53.94,Dark Green,c4,50.33,9.46,0.48,8,51,+10.33%,10.33,pP+
+2026-04-15,daily,EFV,iSh. MSCI EAFE Value ETF,78.46,Dark Green,c4,74.83,8.32,0.52,8,51,+5.44%,5.44,pP
+2026-04-15,daily,EPOL,iSh. MSCI Poland ETF,40.24,Dark Green,c4,36.7,9.65,0.55,9,1,+9.92%,9.92,pP+
+2026-04-15,daily,EPV,ProShares Ultrashort Europe ET,19.08,Dark Red,c6,21.84,-8.36,,8,1,+14.52%,14.52,spBuy
+2026-04-15,daily,ERY,Direxion Energy Bear 2X ETF,12.25,Bear-Bull Flip,c20,11.33,3.77,,71,47,+37.91%,37.91,Buy
+2026-04-15,daily,ESGD,iSh. ESG Aware MSCI EAFE ETF,102.18,Dark Green,c4,96.57,8.3,0.26,8,0,+7.48%,7.48,pP
+2026-04-15,daily,ESPO,VanEck Video Gaming & eSports,91.98,Bear-Bull Flip,c20,89.48,1.42,-0.59,50,20,+8.26%,8.26,Buy
+2026-04-15,daily,EUFN,iSh. MSCI Europe Financials ET,38.29,Dark Green,c4,35.13,8.78,0.37,8,0,+10.89%,10.89,pP+
+2026-04-15,daily,EWC,iSh. MSCI Canada ETF,57.7,Dark Green,c4,55.12,6.82,0.52,6,50,+4.34%,4.34,pP
+2026-04-15,daily,EWI,iSh. MSCI Italy ETF,58.17,Dark Green,c4,54.01,9.19,0.4,9,0,+6.50%,6.5,pP+
+2026-04-15,daily,EWJ,iSh. MSCI Japan ETF,89.41,Dark Green,c4,84.89,6.27,0.35,8,0,+6.47%,6.47,pP
+2026-04-15,daily,EWK,iSh. MSCI Belgium ETF,26.32,Dark Green,c4,24.85,9.51,0.36,6,0,+6.60%,6.6,pP
+2026-04-15,daily,EWO,iSh. MSCI Austria ETF,39.58,Dark Green,c4,35.79,9.46,0.76,8,1,+12.41%,12.41,pP+
+2026-04-15,daily,EWP,iSh. MSCI Spain ETF,58.12,Dark Green,c4,54.58,8.48,0.6,9,62,+5.87%,5.87,pP
+2026-04-15,daily,EWQ,iSh. MSCI France ETF,46.5,Dark Green,c4,43.79,8.51,-0.19,6,0,+6.43%,6.43,pP
+2026-04-15,daily,EWS,iSh. MSCI Singapore ETF,29.23,Dark Green,c4,28.21,7.11,0.23,9,0,+2.60%,2.6,pP
+2026-04-15,daily,EWU,iSh. MSCI United Kingdom ETF,48.07,Dark Green,c4,46.08,8.33,0.39,8,51,+5.51%,5.51,pP
+2026-04-15,daily,EWZ,iSh. MSCI Brazil ETF,41.73,Dark Green,c4,38.23,8.8,0.61,13,50,+12.36%,12.36,pP
+2026-04-15,daily,EZA,iSh. MSCI South Africa ETF,73.65,Dark Green,c4,67.8,7.02,0.74,8,0,+10.84%,10.84,pP
+2026-04-15,daily,FAN,Global Wind Energy ETF,25.9,Dark Green,c4,24.61,8.36,0.63,13,50,+7.42%,7.42,pP
+2026-04-15,daily,FINX,Global X Global FinTech ETF,24.74,Bear-Bull Flip,c20,23.31,0.51,-0.99,22,22,-1.81%,-1.81,Buy
+2026-04-15,daily,GENZ,VanEck Gaming ETF,35.99,Bear-Bull Flip,c20,34.84,1.98,-0.81,2,26,-5.14%,-5.14,Buy
+2026-04-15,daily,GLD,SPDR Gold Shares,445.09,Bear-Bull Flip,c20,429.31,2.57,0.88,21,129,+3.51%,3.51,Buy
+2026-04-15,daily,GREK,Global X MSCI Greece ETF,72.54,Dark Green,c4,66.15,9.19,0.44,8,0,+12.15%,12.15,pP+
+2026-04-15,daily,HEDJ,WisdomTree Europe Hedged Eq. E,55.25,Dark Green,c4,52.82,8.35,0.2,6,0,+5.02%,5.02,pP
+2026-04-15,daily,HEFA,iSh. Currency Hedged MSCI EAFE,44.71,Dark Green,c4,42.88,8.41,0.34,8,1,+5.52%,5.52,pP
+2026-04-15,daily,HQL,abrdn Life Sciences Investors,17.75,Dark Green,c4,16.71,6.44,0.36,8,1,+5.53%,5.53,pP
+2026-04-15,daily,IAT,iSh. US Regional Banks ETF,57.65,Dark Green,c4,54.44,8.12,0.26,6,0,+4.88%,4.88,pP
+2026-04-15,daily,IAU,iSh. Gold Trust ETF,91.18,Bear-Bull Flip,c20,87.93,2.74,0.88,21,129,+3.48%,3.48,Buy
+2026-04-15,daily,IDEV,iSh. Core MSCI Intl Dev. Mkts,89.17,Dark Green,c4,84.3,8.33,0.32,8,1,+7.41%,7.41,pP
+2026-04-15,daily,IDV,iSh. Intl. Selected Dividend E,44.3,Dark Green,c4,42.62,8.27,0.58,9,61,+3.48%,3.48,pP
+2026-04-15,daily,IEFA,iSh. Core MSCI EAFE ETF,96.73,Dark Green,c4,91.41,8.32,0.29,8,0,+7.54%,7.54,pP
+2026-04-15,daily,IEUR,iSh. Core MSCI Europe ETF,75.34,Dark Green,c4,70.94,8.51,0.28,8,0,+7.94%,7.94,pP
+2026-04-15,daily,IGIB,iSh. 5-10 Y Inv. Grade Corp. B,53.63,Bear-Bull Flip,c20,53.3,2.93,-0.38,30,4,+0.35%,0.35,Buy
+2026-04-15,daily,IGSB,iSh. Short Term Corp. Bond ETF,52.67,Bear-Bull Flip,c20,52.53,1.84,-0.39,30,5,+0.27%,0.27,Buy
+2026-04-15,daily,IGV,iSh. Software Sector ETF,79.48,Light Red,c7,81.99,-3.15,-1.04,16,21,+5.21%,5.21,dBuy
+2026-04-15,daily,ILF,iSh. Latin America 40 ETF,38.1,Dark Green,c4,35.26,8.62,0.65,13,50,+10.88%,10.88,pP
+2026-04-15,daily,IMTM,iSh. MSCI Intl. Momentum Facto,52.66,Dark Green,c4,48.78,8.59,0.29,8,0,+9.87%,9.87,pP
+2026-04-15,daily,INDY,iSh. India 50 ETF,44.47,Bear-Bull Flip,c20,43.66,5.36,-0.79,35,16,+6.67%,6.67,Buy
+2026-04-15,daily,IQLT,iSh. MSCI Intl. Quality Factor,49.34,Dark Green,c4,46.58,8.5,0.26,8,0,+7.52%,7.52,pP
+2026-04-15,daily,ISTB,iSh. Core 1-5 Year USD Bond ET,48.54,Bear-Bull Flip,c20,48.42,1.29,-0.39,30,5,+0.23%,0.23,Buy
+2026-04-15,daily,IUSB,iSh. Core Univ. USD Bond ETF,46.47,Bear-Bull Flip,c20,46.25,2.36,-0.39,30,4,+0.47%,0.47,Buy
+2026-04-15,daily,IVLU,iSh. MSCI Intl. Value Factor E,42.02,Dark Green,c4,40.0,8.25,0.68,8,51,+6.38%,6.38,pP
+2026-04-15,daily,KIO,KKR Income Opportunities,11.13,Bear-Bull Flip,c20,10.95,2.41,-0.64,2,26,-2.11%,-2.11,Buy
+2026-04-15,daily,KSA,iSh. MSCI Saudi Arabia ETF,40.3,Dark Green,c4,38.79,6.42,-0.44,13,1,+4.32%,4.32,pP
+2026-04-15,daily,KWEB,KraneSh. China Internet ETF,29.37,Bear-Bull Flip,c20,28.66,0.26,-0.84,50,20,+16.01%,16.01,Buy
+2026-04-15,daily,LITP,Sprott Lithium Miners ETF,15.12,Dark Green,c4,13.35,7.18,1.02,13,40,+20.00%,20.0,pP
+2026-04-15,daily,LQD,iSh. USD Inv. Grade Corp. Bond,109.98,Bear-Bull Flip,c20,109.05,3.13,-0.41,30,5,+0.17%,0.17,Buy
+2026-04-15,daily,MBB,iSh. MBS ETF,95.46,Bear-Bull Flip,c20,94.86,2.47,-0.36,30,4,+0.33%,0.33,Buy
+2026-04-15,daily,MOAT,VanEck Morn. Wide Moat ETF,100.24,Bear-Bull Flip,c20,97.84,2.25,-0.26,27,4,+2.37%,2.37,Buy
+2026-04-15,daily,PHYS,Sprott Physical Gold Trust,36.73,Bear-Bull Flip,c20,35.39,2.73,0.87,21,129,+3.55%,3.55,Buy
+2026-04-15,daily,PSLV,Sprott Physical Silver Trust,25.79,Bear-Bull Flip,c20,23.77,1.8,1.28,21,50,+1.64%,1.64,Buy
+2026-04-15,daily,RZG,Invesco S&P 600 Pure Growth ET,61.82,Dark Green,c4,57.73,9.41,0.26,8,47,+7.08%,7.08,pP+
+2026-04-15,daily,SCJ,iSh. MSCI Japan Small-Cap ETF,103.23,Dark Green,c4,98.17,8.14,0.42,8,1,+6.15%,6.15,pP
+2026-04-15,daily,SDIV,Global X SuperDividend ETF,26.16,Dark Green,c4,25.05,7.4,0.17,9,1,+3.52%,3.52,pP
+2026-04-15,daily,SETM,Sprott Critical Materials ETF,36.93,Dark Green,c4,33.31,5.7,1.19,8,44,+13.70%,13.7,pP
+2026-04-15,daily,SGOL,abrdn Physical Gold ETF,46.16,Bear-Bull Flip,c20,44.51,2.76,0.89,21,129,+3.45%,3.45,Buy
+2026-04-15,daily,SHNY,Gold 3X Leveraged ETN,15.19,Bear-Bull Flip,c20,13.99,1.5,,21,3,+14.52%,14.52,Buy
+2026-04-15,daily,SIVR,abrdn Physical Silver ETF,75.65,Bear-Bull Flip,c20,69.68,1.85,1.31,21,50,+1.65%,1.65,Buy
+2026-04-15,daily,SJB,ProShares Short High Yield ETF,15.27,Dark Red,c6,15.48,-7.29,,7,0,+0.91%,0.91,spBuy
+2026-04-15,daily,SKYY,First Trust Cloud Computing ET,109.3,Light Red,c7,111.97,-1.45,-0.66,14,12,+2.33%,2.33,dBuy
+2026-04-15,daily,SLV,iSh. Silver Trust ETF,72.04,Bear-Bull Flip,c20,66.33,1.8,1.31,21,50,+1.67%,1.67,Buy
+2026-04-15,daily,SOCL,Global X Social Media ETF,45.98,Bear-Bull Flip,c20,44.21,1.63,-0.73,50,9,+16.91%,16.91,Buy
+2026-04-15,daily,SPEU,Portfolio Europe ETF,55.0,Dark Green,c4,51.85,8.61,0.28,6,0,+6.57%,6.57,pP
+2026-04-15,daily,STIP,iSh. 0-5 Y TIPS Bond ETF,103.65,Dark Green,c4,103.26,4.23,-0.37,5,8,+0.30%,0.3,pP
+2026-04-15,daily,TIP,iSh. TIPS Bond ETF,111.53,Dark Green,c4,110.68,5.05,-0.38,3,3,+0.49%,0.49,pP
+2026-04-15,daily,UGL,ProShares Ultra Gold ETF,65.49,Bear-Bull Flip,c20,61.43,2.09,,21,3,+8.51%,8.51,Buy
+2026-04-15,daily,USIG,iSh. USD Inv. Grade Corp. Bond,51.59,Bear-Bull Flip,c20,51.26,3.05,-0.4,30,5,+0.29%,0.29,Buy
+2026-04-15,daily,VCIT,Vanguard I-T Corporate Bond ET,83.43,Bear-Bull Flip,c20,82.89,3.05,-0.39,30,4,+0.31%,0.31,Buy
+2026-04-15,daily,VCSH,Vanguard S-T Corporate Bond ET,79.41,Bear-Bull Flip,c20,79.2,1.97,-0.39,30,5,+0.20%,0.2,Buy
+2026-04-15,daily,VGK,Vanguard Europe ETF,88.37,Dark Green,c4,83.34,8.46,0.29,6,0,+6.43%,6.43,pP
+2026-04-15,daily,WOOD,iSh. Global Timber & Forestry,72.39,Bear-Bull Flip,c20,71.0,3.07,-0.4,30,4,+2.40%,2.4,Buy
+2026-04-15,daily,XPH,SPDR Pharmaceuticals ETF,57.27,Dark Green,c4,54.02,6.02,0.46,8,37,+6.57%,6.57,pP
+2026-04-15,daily,XTL,SPDR Telecom ETF,209.12,Dark Green,c4,193.48,8.04,1.21,8,47,+11.48%,11.48,pP
+2026-04-15,daily,ACH,Accendra Health,3.15,Dark Green,c4,2.47,8.37,-1.49,9,101,+38.16%,38.16,pP
+2026-04-15,daily,AEG,Aegon NV,8.04,Dark Green,c4,7.28,9.6,-0.32,9,0,+8.94%,8.94,pP+
+2026-04-15,daily,AER,AerCap Holdings NV,148.97,Dark Green,c4,138.4,6.49,0.58,6,0,+6.02%,6.02,pP
+2026-04-15,daily,AGX,Argan Inc,603.91,Light Green,c5,516.45,8.2,1.59,11,54,+5.84%,5.84,pP
+2026-04-15,daily,ALH,Alliance Laundry Holdings,24.98,Dark Green,c4,21.28,8.78,-0.47,8,1,+18.39%,18.39,pP
+2026-04-15,daily,ALLO,Allogene Therapeutics,2.28,Bull-Bear Flip,c18,2.85,4.54,0.76,9,19,-8.80%,-8.8,Sell
+2026-04-15,daily,AMBA,Ambarella,56.2,Bear-Bull Flip,c20,52.54,0.96,-0.88,31,15,+2.94%,2.94,Buy
+2026-04-15,daily,AMX,America Movil,26.27,Light Green,c5,24.91,7.47,0.64,14,51,+4.66%,4.66,dSell
+2026-04-15,daily,ANGO,AngioDynamics,10.47,Light Red,c7,10.79,-3.82,0.04,7,13,-1.45%,-1.45,dBuy
+2026-04-15,daily,ARCC,Ares Capital Corp,18.63,Bear-Bull Flip,c20,17.96,0.91,-0.72,54,29,+8.45%,8.45,Buy
+2026-04-15,daily,ARGX,Argenx SA,828.35,Dark Green,c4,739.78,9.34,-0.24,9,0,+11.74%,11.74,pP+
+2026-04-15,daily,AUR,Aurora Innovation,4.67,Bear-Bull Flip,c20,4.13,0.67,-0.78,24,46,-5.90%,-5.9,Buy
+2026-04-15,daily,AXSM,Axsome Therapeutics,184.18,Dark Green,c4,165.25,7.26,0.92,9,33,+8.04%,8.04,pP
+2026-04-15,daily,BABA,Alibaba Group,131.35,Bear-Bull Flip,c20,126.76,0.16,0.15,47,6,+18.49%,18.49,Buy
+2026-04-15,daily,BBVA,Banco Bilbao Vizcaya Argentari,23.61,Dark Green,c4,21.74,7.3,0.71,8,0,+11.16%,11.16,pP
+2026-04-15,daily,BCE,BCE Inc,23.85,Light Red,c7,25.01,-8.23,-0.32,13,0,+6.36%,6.36,spBuy
+2026-04-15,daily,BEKE,KE Holdings,16.5,Bear-Bull Flip,c20,15.57,1.19,-0.65,41,6,+5.93%,5.93,Buy
+2026-04-15,daily,BEP,Brookfield Renewable Energy,34.84,Dark Green,c4,32.25,6.97,0.48,62,47,+22.25%,22.25,pP
+2026-04-15,daily,BETA,BETA Technologies,17.28,Bear-Bull Flip,c20,15.78,2.31,0.0,23,0,+7.79%,7.79,Buy
+2026-04-15,daily,BHP,BHP Billiton,79.17,Dark Green,c4,72.2,8.21,0.68,9,40,+7.68%,7.68,pP
+2026-04-15,daily,BIDU,Baidu Inc,118.23,Bear-Bull Flip,c20,112.39,-1.43,0.47,48,6,+16.01%,16.01,Buy
+2026-04-15,daily,BILI,Bilibili Inc,25.0,Bear-Bull Flip,c20,23.92,1.0,0.47,35,5,+15.02%,15.02,Buy
+2026-04-15,daily,BIP,Brookfield Infrastructure Part,37.23,Bear-Bull Flip,c20,36.03,1.66,0.31,19,2,-1.83%,-1.83,Buy
+2026-04-15,daily,BKSY,BlackSky Technology,32.04,Light Green,c5,27.57,7.31,1.09,8,3,+22.06%,22.06,dSell
+2026-04-15,daily,BLCO,Bausch + Lomb,16.71,Bear-Bull Flip,c20,16.17,2.09,0.4,26,3,+0.48%,0.48,Buy
+2026-04-15,daily,BLX,Banco Latinoamericano,54.94,Dark Green,c4,51.05,8.22,0.63,17,11,+11.12%,11.12,pP
+2026-04-15,daily,BRSL,Brightstar Lottery,12.59,Light Red,c7,12.85,-3.02,-0.91,72,20,+18.77%,18.77,dBuy
+2026-04-15,daily,BSM,Black Stone Minerals,13.5,Dark Red,c6,14.8,-8.36,0.17,8,0,+8.54%,8.54,spBuy+
+2026-04-15,daily,BTBT,Bit Digital,1.51,Bear-Bull Flip,c20,1.4,-1.51,-1.32,56,21,+29.11%,29.11,Buy
+2026-04-15,daily,BTI,British American Tobacco,57.51,Bull-Bear Flip,c18,59.25,0.43,0.58,4,100,-1.34%,-1.34,Sell
+2026-04-15,daily,BUD,Anheuser-Busch InBev,75.59,Dark Green,c4,71.89,8.5,0.51,6,22,+5.34%,5.34,pP
+2026-04-15,daily,BYND,Beyond Meat,0.72,Bear-Bull Flip,c20,0.64,-1.92,-1.65,22,36,+3.15%,3.15,Buy
+2026-04-15,daily,CAI,Caris Life Sciences,20.19,Bear-Bull Flip,c20,18.33,1.29,-1.38,2,16,-12.04%,-12.04,Buy
+2026-04-15,daily,CCEC,Capital Clean Energy Carriers,19.27,Light Red,c7,20.14,-5.33,-0.52,25,4,+8.28%,8.28,dBuy
+2026-04-15,daily,CDXS,Codexis Inc,2.37,Dark Green,c4,1.71,9.16,-1.17,27,0,+92.68%,92.68,pP
+2026-04-15,daily,CEPU,Central Puerto SA,15.41,Bull-Bear Flip,c18,16.59,2.14,0.68,9,1,-9.25%,-9.25,Sell
+2026-04-15,daily,CHGG,Chegg Inc,0.97,Dark Green,c4,0.68,8.65,-1.35,11,23,+38.17%,38.17,pP+
+2026-04-15,daily,CIG,Cia Energetica de Minas Gerais,2.69,Dark Green,c4,2.45,9.23,0.54,17,11,+16.96%,16.96,pP
+2026-04-15,daily,COUR,Coursera,5.94,Light Red,c7,6.02,-1.55,-1.12,24,26,+1.98%,1.98,dBuy
+2026-04-15,daily,CRCL,Circle Internet Group,105.49,Bear-Bull Flip,c20,94.17,-2.77,-0.29,12,1,-7.93%,-7.93,Buy
+2026-04-15,daily,CRESY,Cresud SA,11.63,Bull-Bear Flip,c18,12.4,-0.57,0.31,17,1,-3.73%,-3.73,Sell
+2026-04-15,daily,CRSP,CRISPR Therapeutics,56.86,Dark Green,c4,49.27,5.11,-0.47,4,4,+10.90%,10.9,pP
+2026-04-15,daily,CSTM,Constellium NV,30.53,Dark Green,c4,25.93,8.8,1.32,8,47,+15.21%,15.21,pP
+2026-04-15,daily,CTEV,Claritev,18.14,Bear-Bull Flip,c20,16.61,1.56,-1.24,105,21,+68.03%,68.03,Buy
+2026-04-15,daily,DHT,DHT Holdings,17.18,Bull-Bear Flip,c18,18.03,-0.7,1.16,66,13,+30.55%,30.55,Sell
+2026-04-15,daily,DJT,Trump Media & Technology,9.95,Bear-Bull Flip,c20,9.3,2.04,-1.25,51,10,+26.19%,26.19,Buy
+2026-04-15,daily,DOO,BRP Inc,78.45,Dark Green,c4,69.39,8.42,0.62,9,1,+9.41%,9.41,pP
+2026-04-15,daily,EBS,Emergent Biosolutions,8.66,Bear-Bull Flip,c20,8.24,0.23,0.27,62,6,+29.02%,29.02,Buy
+2026-04-15,daily,EDIT,Editas Medicine,3.39,Dark Green,c4,2.55,8.45,-0.71,25,4,+40.66%,40.66,pP+
+2026-04-15,daily,ELPC,Co. Paranaense de Energia,13.59,Dark Green,c4,12.15,8.97,0.79,18,11,+19.32%,19.32,pP+
+2026-04-15,daily,EMBJ,Embraer SA,69.46,Dark Green,c4,61.94,8.42,0.61,6,0,+9.82%,9.82,pP
+2026-04-15,daily,EPD,Enterprise Products Partners,37.25,Bull-Bear Flip,c18,38.06,-1.8,0.54,62,21,+15.65%,15.65,Sell
+2026-04-15,daily,ESTA,Establishment Labs Holdings,66.48,Bear-Bull Flip,c20,60.87,1.32,0.83,26,2,+3.58%,3.58,Buy
+2026-04-15,daily,EVCM,EverCommerce,11.91,Bear-Bull Flip,c20,10.97,0.48,-0.06,2,4,-9.47%,-9.47,Buy
+2026-04-15,daily,FCEL,Fuelcell Energy,7.3,Bear-Bull Flip,c20,6.62,0.07,-0.78,26,9,-5.49%,-5.49,Buy
+2026-04-15,daily,FERG,Ferguson plc,258.86,Dark Green,c4,234.43,8.64,0.33,8,0,+10.78%,10.78,pP
+2026-04-15,daily,FLNG,Flex Lng Ltd,30.88,Dark Green,c4,29.22,-0.26,-0.27,39,12,+14.24%,14.24,Add
+2026-04-15,daily,FLY,Firefly Aerospace,36.61,Light Green,c5,28.66,9.45,0.86,22,1,+53.57%,53.57,pP
+2026-04-15,daily,FLYW,Flywire,12.23,Bear-Bull Flip,c20,11.7,-0.81,-0.61,17,10,-3.29%,-3.29,Buy
+2026-04-15,daily,FOR,Forestar Group,26.58,Bear-Bull Flip,c20,25.45,2.51,-0.21,33,3,+5.98%,5.98,Buy
+2026-04-15,daily,GCMG,GCM Grosvenor,10.51,Bear-Bull Flip,c20,9.91,0.08,-0.74,25,4,+7.40%,7.4,Buy
+2026-04-15,daily,GDS,GDS Holdings,43.22,Bear-Bull Flip,c20,40.47,-0.13,0.85,11,17,-5.54%,-5.54,Buy
+2026-04-15,daily,GENI,Genius Sports,4.27,Light Red,c7,4.91,-3.9,-1.45,67,23,+59.83%,59.83,dBuy
+2026-04-15,daily,GIB,CGI Group,73.5,Light Red,c7,73.91,-0.89,-0.91,58,58,+16.90%,16.9,dBuy
+2026-04-15,daily,GMAB,Genmab AS,29.06,Dark Green,c4,27.24,6.91,0.24,6,5,+6.88%,6.88,pP
+2026-04-15,daily,GSBD,Goldman Sachs BDC,9.46,Bear-Bull Flip,c20,8.99,0.45,-0.8,2,57,-6.05%,-6.05,Buy
+2026-04-15,daily,GSK,GlaxoSmithKline,59.18,Dark Green,c4,55.5,8.42,0.77,8,34,+5.66%,5.66,pP
+2026-04-15,daily,HBM,HudBay Minerals,25.22,Dark Green,c4,21.19,8.15,1.27,8,0,+22.55%,22.55,pP
+2026-04-15,daily,HPK,HighPeak Energy,5.89,Bull-Bear Flip,c18,6.65,-1.65,-1.03,49,3,+26.94%,26.94,Sell
+2026-04-15,daily,HSBC,HSBC Holdings,91.37,Dark Green,c4,83.89,8.8,0.86,8,51,+10.67%,10.67,pP
+2026-04-15,daily,ING,ING Groep,29.37,Dark Green,c4,26.6,8.88,0.55,8,0,+13.22%,13.22,pP
+2026-04-15,daily,INGM,Ingram Micro,28.22,Dark Green,c4,24.61,9.36,0.68,13,18,+24.87%,24.87,pP
+2026-04-15,daily,IONQ,IonQ Inc,35.76,Bear-Bull Flip,c20,29.5,-0.51,-0.85,23,20,-5.24%,-5.24,Buy
+2026-04-15,daily,JBI,Janus Intl.,5.6,Bear-Bull Flip,c20,5.3,1.46,-1.05,35,22,+19.19%,19.19,Buy
+2026-04-15,daily,KARO,Karooooo Ltd,50.99,Light Green,c5,48.49,3.14,-0.34,13,1,+4.87%,4.87,dSell
+2026-04-15,daily,KOD,Kodiak Sciences,45.07,Light Green,c5,32.93,8.94,1.88,12,38,+7.59%,7.59,pP
+2026-04-15,daily,KRP,Kimbell Royalty Partners,14.2,Bull-Bear Flip,c18,14.62,-0.38,-0.4,63,10,+16.39%,16.39,Sell
+2026-04-15,daily,LCID,Lucid Group,8.8,Light Red,c7,9.68,-3.46,-1.37,12,25,+10.57%,10.57,dBuy
+2026-04-15,daily,LEGN,Legend Biotech,18.69,Bear-Bull (LR-LG),c21,17.82,0.67,-1.3,1,32,-4.71%,-4.71,wBuy
+2026-04-15,daily,LSPD,Lightspeed POS Inc,9.06,Bear-Bull Flip,c20,8.71,-0.61,-0.96,61,20,+22.30%,22.3,Buy
+2026-04-15,daily,MAIN,Main Street Capital,56.39,Bear-Bull Flip,c20,53.54,0.4,-0.6,48,8,+9.62%,9.62,Buy
+2026-04-15,daily,MCS,Marcus Corp,19.39,Dark Green,c4,17.64,8.92,-0.13,15,17,+18.96%,18.96,pP
+2026-04-15,daily,MGNI,Magnite Inc,12.46,Bear-Bull Flip,c20,11.9,0.01,-1.03,22,26,-1.38%,-1.38,Buy
+2026-04-15,daily,MLAB,Mesa Labs,98.97,Dark Green,c4,86.7,7.23,-0.35,9,1,+10.89%,10.89,pP
+2026-04-15,daily,MRVI,Maravai LifeSciences,3.28,Bear-Bull Flip,c20,3.02,1.0,-0.54,22,4,+0.61%,0.61,Buy
+2026-04-15,daily,NBR,Nabors Industries,79.33,Bull-Bear Flip,c18,84.64,-0.8,1.07,1,32,-6.02%,-6.02,Sell
+2026-04-15,daily,NFBK,Northfield Bancorp,13.85,Light Green,c5,13.47,5.12,0.43,17,17,+3.67%,3.67,dSell
+2026-04-15,daily,NG,NovaGold Resources,10.13,Bear-Bull Flip,c20,9.12,2.52,1.26,22,3,+9.39%,9.39,Buy
+2026-04-15,daily,NNE,Nano Nuclear Energy,23.52,Bear-Bull Flip,c20,21.17,0.55,-1.15,50,21,+19.04%,19.04,Buy
+2026-04-15,daily,NOK,Nokia Corp,10.35,Dark Green,c4,8.49,9.24,1.31,47,29,+53.33%,53.33,pP+
+2026-04-15,daily,NTB,Bank of N.T. Butterfield & Son,55.92,Dark Green,c4,52.46,8.46,0.61,15,23,+9.13%,9.13,pP
+2026-04-15,daily,NTRA,Natera Inc,214.64,Bear-Bull Flip,c20,196.28,1.86,0.46,2,9,-10.67%,-10.67,Buy
+2026-04-15,daily,NUS,Nu Skin Enterprises,7.74,Bear-Bull Flip,c20,7.4,2.17,-0.75,44,8,+22.44%,22.44,Buy
+2026-04-15,daily,NUVB,Nuvation Bio,4.85,Bear-Bull Flip,c20,4.46,2.23,0.87,64,5,+36.93%,36.93,Buy
+2026-04-15,daily,NVO,Novo Nordisk,39.32,Bear-Bull Flip,c20,37.09,1.88,-1.16,48,9,+18.00%,18.0,Buy
+2026-04-15,daily,NWG,NatWest Group,17.04,Dark Green,c4,15.38,8.67,0.43,8,8,+13.22%,13.22,pP
+2026-04-15,daily,OBDC,Blue Owl Capital Corp,11.34,Bear-Bull Flip,c20,10.84,-1.02,-0.83,78,36,+10.64%,10.64,Buy
+2026-04-15,daily,OEC,Orion Engineered Carbons,7.08,Dark Green,c4,5.78,7.25,-1.05,14,88,+26.20%,26.2,pP
+2026-04-15,daily,OKLO,Oklo Inc,58.58,Bear-Bull Flip,c20,51.17,-0.57,-0.89,55,10,+32.03%,32.03,Buy
+2026-04-15,daily,ONL,Orion Office REIT,2.52,Dark Green,c4,2.22,5.41,-0.68,2,3,+8.39%,8.39,pP
+2026-04-15,daily,OPEN,Opendoor Technologies,4.51,Light Red,c7,4.88,-3.17,0.78,16,9,+9.80%,9.8,dBuy
+2026-04-15,daily,OPTU,Optimum Communications,1.43,Bear-Bull Flip,c20,1.32,0.33,-1.15,54,24,+15.88%,15.88,Buy
+2026-04-15,daily,OSUR,Orasure Technologies,3.21,Bear-Bull Flip,c20,2.97,0.68,-0.54,10,6,-8.45%,-8.45,Buy
+2026-04-15,daily,OTEX,Open Text Corp,22.25,Light Red,c7,22.92,-2.42,-1.04,61,14,+30.81%,30.81,dBuy
+2026-04-15,daily,OWL,Blue Owl Capital,9.17,Light Red,c7,9.2,-2.77,-1.35,55,59,+38.58%,38.58,dBuy
+2026-04-15,daily,PACB,Pacific Biosciences of CA,1.57,Bear-Bull Flip,c20,1.37,1.63,-0.69,3,8,-15.44%,-15.44,Buy
+2026-04-15,daily,PAGP,Plains GP Holdings,23.36,Bull-Bear Flip,c18,23.9,-1.7,0.74,101,18,+31.02%,31.02,Sell
+2026-04-15,daily,PAM,Pampa Energia SA,83.35,Bull-Bear Flip,c18,87.46,0.86,0.27,24,1,+0.63%,0.63,Sell
+2026-04-15,daily,PBYI,Puma Biotechnology,7.57,Dark Green,c4,6.65,8.68,1.07,9,35,+17.00%,17.0,pP
+2026-04-15,daily,PLUG,Plug Power Inc,2.94,Dark Green,c4,2.4,7.5,-0.22,29,1,+30.67%,30.67,pP
+2026-04-15,daily,PMVP,PMV Pharmaceuticals,1.47,Bear-Bull Flip,c20,1.35,-1.08,-0.54,15,6,-2.08%,-2.08,Buy
+2026-04-15,daily,PSEC,Prospect Capital Corp,2.73,Bear-Bull Flip,c20,2.58,2.07,-0.77,32,6,+0.36%,0.36,Buy
+2026-04-15,daily,PSO,Pearson plc,13.95,Dark Green,c4,13.11,6.56,-0.69,9,12,+6.08%,6.08,pP
+2026-04-15,daily,QBTS,D-Wave Quantum,16.97,Bear-Bull Flip,c20,14.65,-1.13,-0.76,58,10,+37.45%,37.45,Buy
+2026-04-15,daily,QS,QuantumScape,6.86,Bear-Bull Flip,c20,6.39,-1.03,-0.86,103,13,+52.36%,52.36,Buy
+2026-04-15,daily,QUBT,Quantum Computing,8.11,Bear-Bull Flip,c20,6.94,0.73,-1.1,54,22,+26.14%,26.14,Buy
+2026-04-15,daily,RACE,Ferrari NV,358.13,Dark Green,c4,335.32,6.3,-0.99,8,26,+6.02%,6.02,pP
+2026-04-15,daily,RARE,Ultragenyx Pharma,24.57,Dark Green,c4,21.67,7.58,-1.17,8,14,+16.72%,16.72,pP
+2026-04-15,daily,RCI,Rogers Communications,33.28,Dark Red,c6,36.74,-10.0,0.2,22,1,+13.78%,13.78,spBuy
+2026-04-15,daily,RGNX,Regenxbio Inc,9.3,Bear-Bull Flip,c20,8.51,2.21,-0.73,21,10,-6.90%,-6.9,Buy
+2026-04-15,daily,RGTI,Rigetti Computing,16.87,Bear-Bull Flip,c20,14.63,0.48,-0.91,84,15,+35.07%,35.07,Buy
+2026-04-15,daily,RIG,Transocean Ltd,6.17,Bull-Bear Flip,c18,6.66,-0.19,1.14,69,35,+39.28%,39.28,Sell
+2026-04-15,daily,RIO,Rio Tinto,98.87,Dark Green,c4,92.12,8.4,0.78,9,39,+4.78%,4.78,pP
+2026-04-15,daily,ROKU,Roku Inc,106.54,Dark Green,c4,94.69,4.92,0.31,7,0,+8.12%,8.12,pP
+2026-04-15,daily,RTO,Rentokil Initial,34.52,Dark Green,c4,32.18,7.19,0.53,8,37,+8.79%,8.79,pP
+2026-04-15,daily,SAN,Banco Santander,12.56,Dark Green,c4,11.35,7.83,0.75,8,1,+13.56%,13.56,pP
+2026-04-15,daily,SANA,Sana Biotechnology,3.48,Bear-Bull Flip,c20,3.09,2.05,-0.43,50,8,+20.37%,20.37,Buy
+2026-04-15,daily,SBET,SharpLink Gaming,7.14,Bear-Bull Flip,c20,6.66,-1.53,-1.21,14,22,+3.12%,3.12,Buy
+2026-04-15,daily,SDRL,Seadrill Ltd,46.01,Light Green,c5,44.75,4.08,0.95,76,43,+43.02%,43.02,dSell
+2026-04-15,daily,SENEA,Seneca Foods Corp,162.76,Light Green,c5,151.26,5.99,1.08,51,108,+40.08%,40.08,dSell
+2026-04-15,daily,SFD,Smithfield Foods,28.8,Light Green,c5,26.31,9.48,0.95,14,12,+15.38%,15.38,pP
+2026-04-15,daily,SFIX,Stitch Fix Inc,3.33,Light Red,c7,3.43,-1.61,-0.84,51,9,+31.34%,31.34,dBuy
+2026-04-15,daily,SGHC,Super Group (SGHC),10.94,Bear-Bull Flip,c20,10.33,0.16,-0.37,2,19,-7.10%,-7.1,Buy
+2026-04-15,daily,SII,Sprott Inc,149.74,Bear-Bull Flip,c20,140.72,1.72,1.53,18,52,-7.64%,-7.64,Buy
+2026-04-15,daily,SLRC,Solar Capital Ltd,15.82,Dark Green,c4,14.52,5.97,-0.6,7,11,+9.03%,9.03,pP
+2026-04-15,daily,SMMT,Summit Therapeutics,20.85,Dark Green,c4,18.0,7.53,-0.72,24,1,+28.86%,28.86,pP
+2026-04-15,daily,SMR,NuScale Power,10.25,Light Red,c7,11.46,-4.38,-1.35,50,22,+40.65%,40.65,dBuy
+2026-04-15,daily,SOFI,SoFi Technologies,17.91,Bear-Bull Flip,c20,16.55,0.61,-0.68,60,10,+32.52%,32.52,Buy
+2026-04-15,daily,SPHR,Sphere Entertainment,133.56,Dark Green,c4,117.73,7.64,1.51,9,47,+12.25%,12.25,pP
+2026-04-15,daily,SRCE,1st Source Corp,74.25,Dark Green,c4,69.29,8.02,0.42,9,18,+7.14%,7.14,pP
+2026-04-15,daily,SRI,Stoneridge Inc,6.34,Bear-Bull Flip,c20,5.63,1.21,-0.63,29,4,+17.23%,17.23,Buy
+2026-04-15,daily,STLA,Stellantis,8.16,Dark Green,c4,7.19,8.73,-1.06,8,12,+9.68%,9.68,pP
+2026-04-15,daily,STM,STMicroelectronics NV,40.9,Dark Green,c4,35.84,9.32,0.58,9,14,+18.52%,18.52,pP
+2026-04-15,daily,STN,Stantec,89.73,Bear-Bull Flip,c20,86.74,0.25,-0.6,27,20,+0.29%,0.29,Buy
+2026-04-15,daily,STVN,Stevanato Group,14.77,Bear-Bull Flip,c20,13.83,-0.88,-1.21,26,21,+4.03%,4.03,Buy
+2026-04-15,daily,SYBT,Stock Yards Bancorp,71.42,Dark Green,c4,65.85,8.16,-0.52,9,0,+7.25%,7.25,pP
+2026-04-15,daily,TBRG,TruBridge,21.54,Dark Green,c4,16.44,9.34,-0.64,6,11,+25.67%,25.67,pP+
+2026-04-15,daily,TCOM,Trip.com Group,52.57,Bear-Bull Flip,c20,50.74,1.57,-0.72,61,12,+13.79%,13.79,Buy
+2026-04-15,daily,TDAY,USA TODAY,7.19,Dark Green,c4,6.7,2.45,1.0,67,23,+32.66%,32.66,Add
+2026-04-15,daily,TECK,Teck Resources,58.89,Dark Green,c4,51.5,7.68,0.67,9,0,+10.59%,10.59,pP
+2026-04-15,daily,TEM,Tempus AI,49.53,Bear-Bull Flip,c20,45.91,-0.95,-1.26,57,21,+24.95%,24.95,Buy
+2026-04-15,daily,TFII,TFI Intl.,125.05,Dark Green,c4,110.45,8.85,0.44,9,1,+14.19%,14.19,pP
+2026-04-15,daily,TGB,Taseko Mines,7.79,Dark Green,c4,6.54,6.37,1.42,8,0,+22.10%,22.1,pP
+2026-04-15,daily,TGS,Transp. de Gas Del Sur,31.59,Bull-Bear Flip,c18,33.95,-0.77,0.57,23,23,+0.35%,0.35,Sell
+2026-04-15,daily,THRY,Thryv Holdings,3.09,Bear-Bull Flip,c20,2.85,1.49,-1.69,112,56,+61.42%,61.42,Buy
+2026-04-15,daily,TIC,TIC Solutions,7.93,Bear-Bull Flip,c20,7.24,0.03,-1.2,53,21,+25.19%,25.19,Buy
+2026-04-15,daily,TIGO,Millicom Intl. Cellular,80.56,Light Green,c5,76.29,7.51,1.44,60,64,+43.86%,43.86,dSell
+2026-04-15,daily,TPG,TPG Inc,42.38,Bear-Bull Flip,c20,39.37,-1.21,-1.16,58,9,+33.39%,33.39,Buy
+2026-04-15,daily,TREE,LendingTree Inc,45.29,Bear-Bull Flip,c20,41.22,0.49,-0.66,26,9,-9.19%,-9.19,Buy
+2026-04-15,daily,TSEM,Tower Semiconductor,214.11,Light Green,c5,171.14,8.18,1.75,20,41,+54.63%,54.63,pP
+2026-04-15,daily,TSLX,TPG Specialty Lending,18.69,Bear-Bull Flip,c20,18.01,0.49,-0.85,49,28,+12.50%,12.5,Buy
+2026-04-15,daily,TTEC,TTEC Holdings,2.79,Bear-Bull Flip,c20,2.44,-1.06,-1.13,14,36,-9.84%,-9.84,Buy
+2026-04-15,daily,TUSK,Mammoth Energy Services,2.63,Dark Green,c4,2.34,1.15,-0.49,14,12,+13.85%,13.85,Add
+2026-04-15,daily,TW,Tradeweb Markets,121.43,Light Green,c5,120.01,1.6,-0.31,7,7,-1.40%,-1.4,dSell
+2026-04-15,daily,TXG,10X Genomics,24.8,Dark Green,c4,20.93,6.77,0.74,13,41,+20.51%,20.51,pP
+2026-04-15,daily,UBS,UBS Group,42.88,Dark Green,c4,39.16,8.79,0.29,8,5,+10.60%,10.6,pP
+2026-04-15,daily,UEC,Uranium Energy Corp,14.13,Bear-Bull Flip,c20,13.2,1.23,0.82,46,3,+10.91%,10.91,Buy
+2026-04-15,daily,UGP,Ultrapar Holdings,5.99,Dark Green,c4,5.48,8.65,0.98,26,34,+15.86%,15.86,pP
+2026-04-15,daily,UHAL,U-Haul Holding,51.84,Dark Green,c4,47.49,8.32,-0.78,9,9,+8.47%,8.47,pP
+2026-04-15,daily,UIS,Unisys Corp,2.22,Bear-Bull Flip,c20,2.11,-1.59,-1.24,55,59,+22.92%,22.92,Buy
+2026-04-15,daily,ULCC,Frontier Group Holdings,3.96,Bear-Bull Flip,c20,3.61,2.23,-0.7,37,6,+21.89%,21.89,Buy
+2026-04-15,daily,UPST,Upstart Holdings,29.53,Bear-Bull Flip,c20,26.96,2.11,-1.31,58,28,+34.35%,34.35,Buy
+2026-04-15,daily,USAC,USA Compression Partners,27.0,Bull-Bear Flip,c18,27.98,-1.04,0.43,4,13,-3.95%,-3.95,Sell
+2026-04-15,daily,UVSP,Univest Financial,37.2,Dark Green,c4,34.29,8.22,0.38,15,20,+11.44%,11.44,pP
+2026-04-15,daily,VALE,Vale SA,17.68,Dark Green,c4,15.86,8.58,0.79,9,40,+9.07%,9.07,pP
+2026-04-15,daily,VERX,Vertex Inc,11.45,Light Red,c7,12.73,-3.19,-1.53,23,60,+19.08%,19.08,dBuy
+2026-04-15,daily,VLRS,Contr. Vuela Cia De Aviacion,7.83,Bear-Bull Flip,c20,7.41,2.24,0.6,35,5,+16.70%,16.7,Buy
+2026-04-15,daily,WB,Weibo Corp,9.15,Bear-Bull Flip,c20,8.82,0.54,-0.62,50,22,+12.52%,12.52,Buy
+2026-04-15,daily,WBTN,Webtoon Entertainment,11.3,Dark Green,c4,9.67,8.75,-1.17,8,21,+18.95%,18.95,pP
+2026-04-15,daily,WNC,Wabash National Corp,9.32,Bear-Bull Flip,c20,8.78,2.32,-0.67,34,5,+13.94%,13.94,Buy
+2026-04-15,daily,WRBY,Warby Parker,23.14,Bear-Bull Flip,c20,21.33,-1.44,0.25,22,2,+2.20%,2.2,Buy
+2026-04-15,daily,WW,WW International,10.65,Light Red,c7,15.74,-7.67,-1.61,21,56,+53.49%,53.49,spBuy
+2026-04-15,daily,XMTR,Xometry,43.7,Bear-Bull Flip,c20,40.57,1.1,0.37,2,6,-9.11%,-9.11,Buy
+2026-04-15,daily,YEXT,Yext Inc,3.5,Light Red,c7,4.34,-8.38,-1.28,85,15,+58.23%,58.23,spBuy++
+2026-04-15,daily,ZGN,Ermenegildo Zegna,11.54,Dark Green,c4,10.32,7.13,0.39,8,0,+8.97%,8.97,pP
+2026-04-15,daily,ZLAB,Zai Lab Ltd,21.96,Dark Green,c4,19.58,8.21,-1.03,9,31,+10.41%,10.41,pP
+2026-04-15,daily,$USDIDR,Indonesian Rupiah,17135.0,Dark Green,c4,17008.65,7.19,,13,32,+1.40%,1.4,pP
+2026-04-15,daily,$EURCAD,EURCAD,1.6239,Dark Green,c4,1.5988,7.44,,16,0,+1.87%,1.87,pP
+2026-04-15,daily,$XAUXAG,Gold/Silver,60.8512,Bull-Bear Flip,c18,64.427,-0.5,,29,44,-2.15%,-2.15,Sell
+2026-04-15,daily,DCR_X,Decred,21.5,Dark Red,c6,23.32,1.41,,33,1,+20.13%,20.13,AddSh
+2026-04-15,daily,HIVE_X,Hive,0.0586,Dark Red,c6,0.0609477,0.4,,27,57,+8.61%,8.61,AddSh
+2026-04-15,daily,HTX_X,HTX DAO,1.78e-06,Dark Green,c4,1.71e-06,5.97,,30,24,+8.54%,8.54,pP
+2026-04-15,daily,KSM_X,Kusama,4.14,Dark Red,c6,4.363,-0.07,,44,61,+11.99%,11.99,AddSh
+2026-04-15,daily,SEI_X,Sei,0.05443,Dark Red,c6,0.0575474,0.51,,86,26,+52.50%,52.5,AddSh
+2026-04-15,daily,SOL-ETH_X,SOL/ETH,0.03606,Dark Red,c6,0.039133,-6.22,,17,47,+12.35%,12.35,spBuy
+2026-04-15,daily,TFUEL_X,Theta Fuel,0.01124,Dark Red,c6,0.0118166,-0.55,,84,63,+37.14%,37.14,AddSh
+2026-04-15,daily,ZEC_X,Zcash,354.47,Light Green,c5,287.68,9.84,,14,0,+42.71%,42.71,pP
