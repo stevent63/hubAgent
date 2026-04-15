@@ -28,6 +28,7 @@ MODE_MAP = {
     'c5': 'Light Green',
     'c6': 'Dark Red',
     'c7': 'Light Red',
+    'c18': 'Bull-Bear Flip',
     'c20': 'Bear-Bull Flip',
     'c21': 'Bear-Bull (LR-LG)',
 }
@@ -89,10 +90,15 @@ def extract_mode(td_element) -> tuple[str, str]:
 
 
 def parse_float(value: str, field_name: str = '', row_context: str = '') -> float | None:
-    """Parse a string to float, handling $, commas, %, and blanks."""
+    """Parse a string to float, handling $, commas, %, arrows (▲▼), and blanks."""
     if value is None:
         return None
     cleaned = value.strip().replace('$', '').replace(',', '').replace('%', '')
+    # Strip arrow characters and anything after them (e.g. '2.60▲33' → '2.60')
+    for arrow in ('▲', '▼', '△', '▽', '▷', '◁', '►', '◄'):
+        if arrow in cleaned:
+            cleaned = cleaned[:cleaned.index(arrow)]
+    cleaned = cleaned.strip()
     if cleaned == '' or cleaned == '-' or cleaned == 'N/A':
         return None
     try:
@@ -118,16 +124,13 @@ def parse_int(value: str, field_name: str = '', row_context: str = '') -> int | 
         return None
 
 
-def find_signal_table(soup: BeautifulSoup) -> tuple:
-    """Find the main signal table — largest table with an 'Action' column header."""
+def find_signal_tables(soup: BeautifulSoup) -> list:
+    """Find all signal tables — tables with an 'Action' column header and data rows."""
     tables = soup.find_all('table')
     if not tables:
         raise ValueError("No <table> elements found in HTML file")
 
-    best_table = None
-    best_headers = None
-    best_row_count = 0
-
+    result = []
     for table in tables:
         header_row = table.find('tr')
         if not header_row:
@@ -135,19 +138,17 @@ def find_signal_table(soup: BeautifulSoup) -> tuple:
         headers = [th.get_text(strip=True) for th in header_row.find_all(['th', 'td'])]
         if 'Action' not in headers:
             continue
-        rows = table.find_all('tr')[1:]  # skip header
-        if len(rows) > best_row_count:
-            best_table = table
-            best_headers = headers
-            best_row_count = len(rows)
+        rows = table.find_all('tr')[1:]
+        if len(rows) > 0:
+            result.append((table, headers))
 
-    if best_table is None:
+    if not result:
         raise ValueError(
             "No table found with 'Action' column header. "
             "Check that the HTML file contains the RL signal table."
         )
 
-    return best_table, best_headers
+    return result
 
 
 def parse_html(filepath: str, file_type_override: str | None = None) -> dict:
@@ -163,81 +164,85 @@ def parse_html(filepath: str, file_type_override: str | None = None) -> dict:
         html_content = f.read()
 
     soup = BeautifulSoup(html_content, 'lxml')
-    table, headers = find_signal_table(soup)
+    all_tables = find_signal_tables(soup)
+    log(f"Found {len(all_tables)} signal tables")
 
-    # Detect file type from headers, override if specified
-    detected_type = detect_file_type(headers)
+    # Use first table's headers for file type detection
+    first_headers = all_tables[0][1]
+    detected_type = detect_file_type(first_headers)
     file_type = file_type_override or filename_type or detected_type
     log(f"Detected file type: {file_type}")
 
-    # Find column indices by header name
-    action_idx = headers.index('Action')
-
-    # Parse rows
-    data_rows = table.find_all('tr')[1:]  # skip header row
+    # Parse rows from all tables
     signals = []
     warnings = []
+    global_row_idx = 0
 
-    for row_idx, tr in enumerate(data_rows):
-        tds = tr.find_all('td')
-        if len(tds) < 8:
-            log(f"WARNING: Row {row_idx} has only {len(tds)} cells, skipping")
-            continue
+    for table, headers in all_tables:
+        action_idx = headers.index('Action')
+        data_rows = table.find_all('tr')[1:]  # skip header row
 
-        row_context = f"(row {row_idx})"
-        try:
-            name = tds[0].get_text(strip=True)
-            ticker = tds[1].get_text(strip=True)
-            row_context = f"(row {row_idx}, {ticker})"
+        for tr in data_rows:
+            tds = tr.find_all('td')
+            if len(tds) < 8:
+                log(f"WARNING: Row {global_row_idx} has only {len(tds)} cells, skipping")
+                global_row_idx += 1
+                continue
 
-            close = parse_float(tds[2].get_text(strip=True), 'close', row_context)
-            tr_weeks = parse_int(tds[3].get_text(strip=True), 'tr_weeks', row_context)
-            mode, mode_css = extract_mode(tds[4])
-            revl = parse_float(tds[5].get_text(strip=True), 'revl', row_context)
-            mom = parse_float(tds[6].get_text(strip=True), 'mom', row_context)
-            days = parse_int(tds[7].get_text(strip=True), 'days', row_context)
-            pl_raw = tds[8].get_text(strip=True) if len(tds) > 8 else None
-            pl_num = parse_float(pl_raw, 'pl_num', row_context) if pl_raw else None
+            row_context = f"(row {global_row_idx})"
+            try:
+                name = tds[0].get_text(strip=True)
+                ticker = tds[1].get_text(strip=True)
+                row_context = f"(row {global_row_idx}, {ticker})"
 
-            # R value at index 10 (skip index 9 which is Envelope)
-            r_value = None
-            if len(tds) > 10:
-                r_value = parse_float(tds[10].get_text(strip=True), 'r', row_context)
+                close = parse_float(tds[2].get_text(strip=True), 'close', row_context)
+                tr_weeks = parse_int(tds[3].get_text(strip=True), 'tr_weeks', row_context)
+                mode, mode_css = extract_mode(tds[4])
+                revl = parse_float(tds[5].get_text(strip=True), 'revl', row_context)
+                mom = parse_float(tds[6].get_text(strip=True), 'mom', row_context)
+                days = parse_int(tds[7].get_text(strip=True), 'days', row_context)
+                pl_raw = tds[8].get_text(strip=True) if len(tds) > 8 else None
+                pl_num = parse_float(pl_raw, 'pl_num', row_context) if pl_raw else None
 
-            # Action column — find by header index
-            signal_type = 'Hold'
-            if len(tds) > action_idx:
-                signal_text = tds[action_idx].get_text(strip=True)
-                if signal_text and signal_text in KNOWN_SIGNALS:
-                    signal_type = signal_text
-                elif signal_text and signal_text != '':
-                    log(f"WARNING: Unknown signal '{signal_text}' {row_context}")
-                    signal_type = signal_text  # Store it anyway
+                # R value at index 10 (skip index 9 which is Envelope)
+                r_value = None
+                if len(tds) > 10:
+                    r_value = parse_float(tds[10].get_text(strip=True), 'r', row_context)
 
-            if mode == 'Unknown':
-                log(f"WARNING: Unknown mode CSS for {ticker} {row_context}")
+                # Action column — find by header index
+                signal_type = 'Hold'
+                if len(tds) > action_idx:
+                    signal_text = tds[action_idx].get_text(strip=True)
+                    if signal_text and signal_text in KNOWN_SIGNALS:
+                        signal_type = signal_text
+                    elif signal_text and signal_text != '':
+                        log(f"WARNING: Unknown signal '{signal_text}' {row_context}")
+                        signal_type = signal_text  # Store it anyway
 
-            signals.append({
-                'ticker': ticker,
-                'name': name,
-                'close': close,
-                'mode': mode,
-                'mode_css': mode_css,
-                'revl': revl,
-                'mom': mom,
-                'r': r_value,
-                'days': days,
-                'tr_weeks': tr_weeks,
-                'pl_raw': pl_raw,
-                'pl_num': pl_num,
-                'signal_type': signal_type,
-            })
-        except Exception as e:
-            log(f"WARNING: Error parsing row {row_idx}: {e}")
-            warnings.append(f"Row {row_idx}: {e}")
-            continue
+                if mode == 'Unknown':
+                    log(f"WARNING: Unknown mode CSS for {ticker} {row_context}")
 
-    log(f"Extracted {len(signals)} rows")
+                signals.append({
+                    'ticker': ticker,
+                    'name': name,
+                    'close': close,
+                    'mode': mode,
+                    'mode_css': mode_css,
+                    'revl': revl,
+                    'mom': mom,
+                    'r': r_value,
+                    'days': days,
+                    'tr_weeks': tr_weeks,
+                    'pl_raw': pl_raw,
+                    'pl_num': pl_num,
+                    'signal_type': signal_type,
+                })
+            except Exception as e:
+                log(f"WARNING: Error parsing row {global_row_idx}: {e}")
+                warnings.append(f"Row {global_row_idx}: {e}")
+            global_row_idx += 1
+
+    log(f"Extracted {len(signals)} rows from {len(all_tables)} tables")
 
     # Deduplication by (name, ticker, signal_type)
     seen = set()
