@@ -29,6 +29,7 @@ MODE_MAP = {
     'c6': 'Dark Red',
     'c7': 'Light Red',
     'c18': 'Bull-Bear Flip',
+    'c19': 'Bull-Bear (LG-LR)',
     'c20': 'Bear-Bull Flip',
     'c21': 'Bear-Bull (LR-LG)',
 }
